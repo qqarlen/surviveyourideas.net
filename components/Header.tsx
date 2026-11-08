@@ -32,9 +32,8 @@ export default function Header() {
                 {g.title}
                 <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3 opacity-60"><path d="M5.5 7.5 10 12l4.5-4.5H5.5Z" /></svg>
               </button>
-              {/* Close-delay grace window: keeps menu alive ~100ms when the cursor
-                  briefly leaves the hover zone (diagonal moves), so it won't blink out. */}
-              <div className="absolute left-0 top-full pt-1 invisible opacity-0 translate-y-1 transition-all duration-150 delay-100 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:delay-0">
+              {/* z-20: paints above .slash::after glow line (pseudo paints after plain children) */}
+              <div className="absolute left-0 top-full pt-1 z-20 invisible opacity-0 translate-y-1 transition-all duration-150 delay-100 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-hover:delay-0">
                 <div className="rounded-xl border border-blue-200 bg-white shadow-lg py-2 w-56">
                   {g.items.map((it) => (
                     <Link
