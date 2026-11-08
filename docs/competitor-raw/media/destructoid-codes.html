@@ -1,0 +1,1821 @@
+<!doctype html>
+<html class="no-js" lang="en-US">
+
+<head>
+		<script>
+			(async function () {
+				try {
+					const response = await fetch('/wp-json/navy/v1/tag?pid=A-6154B898BBD8E7536A775AC9-17&environment=production');
+					const tag = await response.text();
+					const script = document.createElement('script');
+					script.type = 'text/javascript';
+					script.innerHTML = tag;
+					script.id = 'navy';
+					document.head.appendChild(script);
+				} catch (e) {
+					console.error('navy error', e);
+				}
+			})();
+	</script>
+
+	<!-- Begin comScore Tag -->
+	<script>
+		var _comscore = _comscore || [];
+		_comscore.push({ c1: "2", c2: "36750692" });
+		(function () {
+			var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+			s.src = "https://sb.scorecardresearch.com/cs/36750692/beacon.js";
+			el.parentNode.insertBefore(s, el);
+		})();
+	</script>
+	<!-- End comScore Tag -->
+
+	<!-- Default for all pages -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Slobodan Brkljac">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MVNJTGZFK4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-MVNJTGZFK4', {"dimension1":"Slobodan Brkljac","dimension7":"focus_keyword_not_set","dimension9":"codes","dimension10":"2026-11-07T02:58:33-06:00"});
+</script>
+		<script id="gamurs-growthbook-loader">
+(function () {
+  // Respect user privacy signals. If either Do Not Track or Global Privacy Control
+  // is set, skip GrowthBook initialization entirely — no SDK fetch, no bucketing,
+  // no exposure events. Those users see the default rendering for every flag.
+  var dnt = (typeof navigator.doNotTrack !== 'undefined' && navigator.doNotTrack === '1') ||
+            window.doNotTrack === '1' ||
+            navigator.msDoNotTrack === '1';
+  var gpc = navigator.globalPrivacyControl === true;
+  if (dnt || gpc) { return; }
+
+  if (window.growthbook_config) { return; } // GTM tag 356 still active? Let one of us win.
+
+  function getSnowplowDomainUserId() {
+    var pairs = document.cookie.split('; ');
+    for (var i = 0; i < pairs.length; i++) {
+      if (pairs[i].indexOf('_sp_id.') === 0) {
+        return pairs[i].split('=')[1].split('.')[0] || null;
+      }
+    }
+    return null;
+  }
+
+  window.growthbook_config = {};
+  window.growthbook_config.attributes = {
+    country: "PH",
+    anonymous_id: getSnowplowDomainUserId(), // may be null on a first pageview; backfilled below
+    user_id: null,
+    referrer: document.referrer,
+    url: window.location.href,
+    userAgent: navigator.userAgent
+  };
+
+  window.growthbook_config.trackingCallback = function (experiment, result) {
+    if (window.snowplow) {
+      window.snowplow('trackStructEvent', {
+        category: 'Experiments',
+        action: 'GrowthBook Experiment Viewed',
+        label: experiment.key,
+        property: result.key
+      });
+    }
+    if (window.clarity) {
+      window.clarity('set', 'experiment', experiment.key);
+    }
+  };
+
+  window.growthbook_queue = window.growthbook_queue || [];
+  window.growthbook_queue.push(function (gb) { gb.init(); });
+
+  var s = document.createElement('script');
+  s.async = true;
+  s.dataset.clientKey = "sdk-LmjHnXEHTGSazmI";
+  s.dataset.decryptionKey = "kvNCD6hH4ykx5B3xd8jSRA==";
+  s.src = "\/static\/v2\/growthbook.js";
+  document.head.appendChild(s);
+
+  // Backfill anonymous_id once the Snowplow cookie exists.
+  //
+  // This inline script runs at wp_head priority 1, but `_sp_id.*` is only set
+  // after the Snowplow tracker bundle (gamurs-group-analytics, priority 10)
+  // downloads and runs `newTracker` — a network round-trip away, not just a few
+  // lines further down the <head>. So on a visitor's first ever pageview the
+  // cookie does not exist yet and anonymous_id is null. Every network experiment
+  // hashes on anonymous_id, and the SDK abandons an experiment rule when the hash
+  // value is empty (`if (!hashValue) return { variation: -1 }`) — no bucketing,
+  // no variant, no exposure event. Measured on Destructoid 2026-08-26: a new
+  // visitor's first pageview bucketed 22% of the time vs 70% on their second
+  // pageview, once the cookie existed. See issue #921.
+  //
+  // The SDK is still fetched immediately (above) so flag defaults and
+  // force/rollout rules resolve as early as they always did; when the cookie
+  // shows up we hand the id to the live instance and GrowthBook re-evaluates,
+  // firing exposures for any experiment the visitor now buckets into.
+  //
+  // The deadline is deliberately short. Consumers re-read their flags on
+  // 'growthbookdata', so a late backfill can flip a variant *after* the visitor
+  // has already been served the other one — infinite scroll may have appended
+  // articles (functions.php, gamurs_inf_scroll_data) and the codes-hunter banner
+  // would pop in late (inc/codes-hunter-banner.php, applyRouting). 3s covers the
+  // Snowplow bundle's round-trip with room to spare while keeping that window
+  // small; past it we accept the lost exposure rather than flip a variant under
+  // someone mid-read. Wall-clock via Date.now() rather than counting polls,
+  // because background tabs throttle setTimeout to >=1s per tick.
+  if (!window.growthbook_config.attributes.anonymous_id) {
+    var deadline = Date.now() + 3000;
+
+    (function pollForSnowplowCookie() {
+      var anonymousId = getSnowplowDomainUserId();
+
+      if (!anonymousId) {
+        if (Date.now() < deadline) { window.setTimeout(pollForSnowplowCookie, 50); }
+        return;
+      }
+
+      window.growthbook_config.attributes.anonymous_id = anonymousId;
+      window.growthbook_queue = window.growthbook_queue || [];
+      // One-shot, and never from inside a 'growthbookdata' listener: setAttributes
+      // re-renders, which dispatches 'growthbookdata' (see PROD #920's loop).
+      // updateAttributes(), not setAttributes(getAttributes()): getAttributes()
+      // returns attributes merged with attributeOverrides, so feeding it back
+      // would bake QA/DevTools overrides permanently into the real attributes.
+      window.growthbook_queue.push(function (gb) {
+        gb.updateAttributes({ anonymous_id: anonymousId });
+      });
+    })();
+  }
+})();
+</script>
+	
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "gtmDataLayer";
+	var gtmDataLayer = gtmDataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link fetchpriority="high" rel="preload" as="image" href="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1200%2C675" imagesrcset="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=460 460w" imagesizes="(max-width: 1200px) 100vw, 1200px"/>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v22.8 (Yoast SEO v22.8) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Survive Your Ideas codes (November 2026) &#8211; Destructoid</title>
+	<link rel="canonical" href="https://www.destructoid.com/survive-your-ideas-codes/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Survive Your Ideas codes (November 2026)" />
+	<meta property="og:description" content="Your vocabulary might save your life, but these Survive Your Ideas codes will ensure it." />
+	<meta property="og:url" content="https://www.destructoid.com/survive-your-ideas-codes/" />
+	<meta property="og:site_name" content="Destructoid" />
+	<meta property="article:publisher" content="https://www.facebook.com/Destructoid/" />
+	<meta property="article:published_time" content="2026-11-07T08:58:33+00:00" />
+	<meta property="article:modified_time" content="2026-11-07T08:58:40+00:00" />
+	<meta property="og:image" content="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp" />
+	<meta property="og:image:width" content="1280" />
+	<meta property="og:image:height" content="720" />
+	<meta property="og:image:type" content="image/webp" />
+	<meta name="author" content="Slobodan Brkljac" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:creator" content="@destructoid" />
+	<meta name="twitter:site" content="@destructoid" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"NewsArticle","@id":"https://www.destructoid.com/survive-your-ideas-codes/#article","isPartOf":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/"},"author":[{"@id":"https://www.destructoid.com/#/schema/person/8bdf05139293df215a42578eb4ca8220"}],"headline":"Survive Your Ideas codes (November 2026)","datePublished":"2026-11-07T08:58:33+00:00","dateModified":"2026-11-07T08:58:40+00:00","mainEntityOfPage":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/"},"wordCount":357,"commentCount":0,"publisher":{"@id":"https://www.destructoid.com/#organization"},"image":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/#primaryimage"},"thumbnailUrl":"https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1280%2C720","keywords":["codes","hide from homepage","roblox codes"],"articleSection":["Codes"],"inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.destructoid.com/survive-your-ideas-codes/#respond"]}],"copyrightYear":"2026","copyrightHolder":{"@id":"https://www.destructoid.com/#organization"}},{"@type":"WebPage","@id":"https://www.destructoid.com/survive-your-ideas-codes/","url":"https://www.destructoid.com/survive-your-ideas-codes/","name":"Survive Your Ideas codes (November 2026) &#8211; Destructoid","isPartOf":{"@id":"https://www.destructoid.com/#website"},"primaryImageOfPage":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/#primaryimage"},"image":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/#primaryimage"},"thumbnailUrl":"https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1280%2C720","datePublished":"2026-11-07T08:58:33+00:00","dateModified":"2026-11-07T08:58:40+00:00","breadcrumb":{"@id":"https://www.destructoid.com/survive-your-ideas-codes/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.destructoid.com/survive-your-ideas-codes/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.destructoid.com/survive-your-ideas-codes/#primaryimage","url":"https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1280%2C720","contentUrl":"https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1280%2C720","width":1280,"height":720,"caption":"Image via Survive Your Ideas"},{"@type":"BreadcrumbList","@id":"https://www.destructoid.com/survive-your-ideas-codes/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.destructoid.com/"},{"@type":"ListItem","position":2,"name":"Survive Your Ideas codes (November 2026)"}]},{"@type":"WebSite","@id":"https://www.destructoid.com/#website","url":"https://www.destructoid.com/","name":"Destructoid","description":"A Site About Video Games","publisher":{"@id":"https://www.destructoid.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.destructoid.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.destructoid.com/#organization","name":"Destructoid","url":"https://www.destructoid.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.destructoid.com/#/schema/logo/image/","url":"https://www.destructoid.com/wp-content/uploads/2020/09/destructoid-logo-new.png?fit=611%2C104","contentUrl":"https://www.destructoid.com/wp-content/uploads/2020/09/destructoid-logo-new.png?fit=611%2C104","width":611,"height":104,"caption":"Destructoid"},"image":{"@id":"https://www.destructoid.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/Destructoid/","https://x.com/destructoid","https://www.instagram.com/destructoid/","https://www.linkedin.com/company/destructoid.com/","https://www.youtube.com/user/DTOID"],"parentOrganization":{"@type":"Organization","name":"GAMURS Group"}},{"@type":"Person","@id":"https://www.destructoid.com/#/schema/person/8bdf05139293df215a42578eb4ca8220","name":"Slobodan Brkljac","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.destructoid.com/#/schema/person/image/45636b3bdb0900fb85dbc9ca551672a4","url":"https://secure.gravatar.com/avatar/449e8edfa6aa7437c4c07ee408f8afb1b94a5f693e3b2e43fda6a705eec31623?s=96&d=simple_local_avatar&r=g","contentUrl":"https://secure.gravatar.com/avatar/449e8edfa6aa7437c4c07ee408f8afb1b94a5f693e3b2e43fda6a705eec31623?s=96&d=simple_local_avatar&r=g","caption":"Slobodan Brkljac"},"description":"Slobodan Brkljac is a gaming writer dedicated to exploring all corners of Roblox. While he loves him some Horizon Zero Dawn, Tomb Raider, and Uncharted, he's always on the hunt for the next big Roblox title. When he isn't changing his avatar's haircut for the 100th time, you can find him hitting a new personal record at the gym, traveling, or desperately looking for that perfect latte.","worksFor":{"@type":"NewsMediaOrganization","name":"Destructoid","parentOrganization":{"@type":"Organization","name":"GAMURS Group"}},"url":"https://www.destructoid.com/author/slobodan-brkljacgmail-com/"}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//census.gamurs.group' />
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//infinity-js.destructoid.com' />
+<script data-api-url="https://www.destructoid.com/wp-json/wordpress-popular-posts" data-debug="0" data-lang="0" data-post-id="1287087" data-sampling-rate="100" data-sampling="1" data-token="c8e79283f3" id="wpp-js" src="https://www.destructoid.com/wp-content/plugins/wordpress-popular-posts/assets/js/wpp.min.js?ver=7.3.6"></script>
+<link rel="alternate" type="application/rss+xml" title="Destructoid &raquo; Survive Your Ideas codes (November 2026) Comments Feed" href="https://www.destructoid.com/survive-your-ideas-codes/feed/" />
+<link rel="preload" as="fetch" href="https://geo.bigcrunch.com/" crossorigin="anonymous"><link rel="preload" as="fetch" href="https://cdn.bigcrunch.com/cmp/config/5194b465-25dd-4447-a221-7587e732cb0c.json" crossorigin="anonymous"><script async src="https://dist.bigcrunch.com/cmp/cmp.js" data-property-id="5194b465-25dd-4447-a221-7587e732cb0c" crossorigin="anonymous" fetchpriority="high"></script><link rel="preload" as="script" href="https://cdn.bigcrunch.com/prebid/5194b465-25dd-4447-a221-7587e732cb0c.js" crossorigin="anonymous"><link rel="preload" as="fetch" href="https://cdn.bigcrunch.com/config/5194b465-25dd-4447-a221-7587e732cb0c.json" crossorigin="anonymous"><script async src="https://dist.bigcrunch.com/lighthouse/main.js" id="bigcrunchtag" data-property-id="5194b465-25dd-4447-a221-7587e732cb0c" crossorigin="anonymous" fetchpriority="high"></script><style id="gamurs-stn-video-css">.wp-block-gamurs-ad.is-video-ad{align-items:center;display:flex;flex-direction:column;justify-content:center}.wp-block-gamurs-ad.is-video-ad .wp-block-gamurs-ad__creative{align-items:center;display:flex;flex-direction:column;justify-content:center;min-height:300px;text-align:center;width:100%}.wp-block-gamurs-ad.is-video-ad .video-player-title{color:var(--wp--custom--ad-wrapper--color-fg,inherit);font-family:var(--wp--custom--ad-wrapper--type--font-family,inherit);font-size:var(--wp--custom--ad-wrapper--type--font-size,inherit);font-weight:var(--wp--custom--ad-wrapper--type--font-weight,inherit);letter-spacing:var(--wp--custom--ad-wrapper--type--letter-spacing,inherit);line-height:var(--wp--custom--ad-wrapper--type--line-height,inherit);text-transform:var(--wp--custom--ad-wrapper--type--text-transform,inherit)}.wp-block-gamurs-ad.is-video-ad .video-player{width:100%}</style><style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<link rel='stylesheet' id='azonpress_block-cgb-block-style-css-css' href='https://www.destructoid.com/wp-content/plugins/azonpress/public/blocks/dist/blocks.style.build.css?ver=2.1.1' media='all' />
+<link rel='stylesheet' id='load-fa-css' href='https://www.destructoid.com/wp-content/plugins/azonpress/public/blocks/icons/font-awesome-custom.css?ver=2.1.1' media='all' />
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="wp-block-heading-inline-css">
+h1:where(.wp-block-heading).has-background,h2:where(.wp-block-heading).has-background,h3:where(.wp-block-heading).has-background,h4:where(.wp-block-heading).has-background,h5:where(.wp-block-heading).has-background,h6:where(.wp-block-heading).has-background{padding:1.25em 2.375em}h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h1.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h2.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h3.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h3.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h4.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h4.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h5.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h5.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]),h6.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h6.has-text-align-right[style*=writing-mode]:where([style*=vertical-rl]){rotate:180deg}
+/*# sourceURL=https://www.destructoid.com/wp-includes/blocks/heading/style.min.css */
+</style>
+<style id="wp-block-image-inline-css">
+.wp-block-image>a,.wp-block-image>figure>a{display:inline-block}.wp-block-image img{box-sizing:border-box;height:auto;max-width:100%;vertical-align:bottom}@media not (prefers-reduced-motion){.wp-block-image img.hide{visibility:hidden}.wp-block-image img.show{animation:show-content-image .4s}}.wp-block-image[style*=border-radius] img,.wp-block-image[style*=border-radius]>a{border-radius:inherit}.wp-block-image.has-custom-border img{box-sizing:border-box}.wp-block-image.aligncenter{text-align:center}.wp-block-image.alignfull>a,.wp-block-image.alignwide>a{width:100%}.wp-block-image.alignfull img,.wp-block-image.alignwide img{height:auto;width:100%}.wp-block-image .aligncenter,.wp-block-image .alignleft,.wp-block-image .alignright,.wp-block-image.aligncenter,.wp-block-image.alignleft,.wp-block-image.alignright{display:table}.wp-block-image .aligncenter>figcaption,.wp-block-image .alignleft>figcaption,.wp-block-image .alignright>figcaption,.wp-block-image.aligncenter>figcaption,.wp-block-image.alignleft>figcaption,.wp-block-image.alignright>figcaption{caption-side:bottom;display:table-caption}.wp-block-image .alignleft{float:left;margin:.5em 1em .5em 0}.wp-block-image .alignright{float:right;margin:.5em 0 .5em 1em}.wp-block-image .aligncenter{margin-left:auto;margin-right:auto}.wp-block-image :where(figcaption){margin-bottom:1em;margin-top:.5em}.wp-block-image.is-style-circle-mask img{border-radius:9999px}@supports ((-webkit-mask-image:none) or (mask-image:none)) or (-webkit-mask-image:none){.wp-block-image.is-style-circle-mask img{border-radius:0;-webkit-mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-image:url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:contain;mask-size:contain}}:root :where(.wp-block-image.is-style-rounded img,.wp-block-image .is-style-rounded img){border-radius:9999px}.wp-block-image figure{margin:0}.wp-lightbox-container{display:flex;flex-direction:column;position:relative}.wp-lightbox-container img{cursor:zoom-in}.wp-lightbox-container img:hover+button{opacity:1}.wp-lightbox-container button{align-items:center;backdrop-filter:blur(16px) saturate(180%);background-color:rgba(90,90,90,.25);border:none;border-radius:4px;cursor:zoom-in;display:flex;height:20px;justify-content:center;opacity:0;padding:0;position:absolute;right:16px;text-align:center;top:16px;width:20px;z-index:100}@media not (prefers-reduced-motion){.wp-lightbox-container button{transition:opacity .2s ease}}.wp-lightbox-container button:focus-visible{outline:3px auto rgba(90,90,90,.25);outline:3px auto -webkit-focus-ring-color;outline-offset:3px}.wp-lightbox-container button:hover{cursor:pointer;opacity:1}.wp-lightbox-container button:focus{opacity:1}.wp-lightbox-container button:focus,.wp-lightbox-container button:hover,.wp-lightbox-container button:not(:hover):not(:active):not(.has-background){background-color:rgba(90,90,90,.25);border:none}.wp-lightbox-overlay{box-sizing:border-box;cursor:zoom-out;height:100vh;left:0;overflow:hidden;position:fixed;top:0;visibility:hidden;width:100%;z-index:100000}.wp-lightbox-overlay .wp-lightbox-close-button{align-items:center;cursor:pointer;display:flex;font-family:inherit;gap:8px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 4px;position:absolute;right:calc(env(safe-area-inset-right) + 16px);top:calc(env(safe-area-inset-top) + 16px);z-index:5000000}.wp-lightbox-overlay .wp-lightbox-close-button:focus,.wp-lightbox-overlay .wp-lightbox-close-button:hover,.wp-lightbox-overlay .wp-lightbox-close-button:not(:hover):not(:active):not(.has-background){background:none;border:none}.wp-lightbox-overlay .wp-lightbox-close-button:has(.wp-lightbox-close-text:not([hidden])) .wp-lightbox-close-icon svg{height:1em;width:1em}.wp-lightbox-overlay .wp-lightbox-close-icon svg{display:block}.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{align-items:center;bottom:16px;cursor:pointer;display:flex;font-family:inherit;gap:4px;justify-content:center;line-height:1;min-height:40px;min-width:40px;padding:0 8px;position:absolute;z-index:2000002}.wp-lightbox-overlay .wp-lightbox-navigation-button-next[hidden],.wp-lightbox-overlay .wp-lightbox-navigation-button-prev[hidden]{display:none}@media (min-width:960px){.wp-lightbox-overlay .wp-lightbox-navigation-button-next,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{bottom:50%;transform:translateY(-50%)}}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-next:not(:hover):not(:active):not(.has-background),.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:focus,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:hover,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:not(:hover):not(:active):not(.has-background){background:none;border:none;padding:0 8px}.wp-lightbox-overlay .wp-lightbox-navigation-button-next:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg,.wp-lightbox-overlay .wp-lightbox-navigation-button-prev:has(.wp-lightbox-navigation-text:not([hidden])) .wp-lightbox-navigation-icon svg{display:block;height:1.5em;width:1.5em}.wp-lightbox-overlay .wp-lightbox-navigation-button-prev{left:calc(env(safe-area-inset-left) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-button-next{right:calc(env(safe-area-inset-right) + 16px)}.wp-lightbox-overlay .wp-lightbox-navigation-icon svg{vertical-align:middle}.wp-lightbox-overlay .lightbox-image-container{height:var(--wp--lightbox-container-height);left:50%;overflow:hidden;position:absolute;top:50%;transform:translate(-50%,-50%);transform-origin:top left;width:var(--wp--lightbox-container-width);z-index:2000001}.wp-lightbox-overlay .wp-block-image{align-items:center;box-sizing:border-box;display:flex;height:100%;justify-content:center;margin:0;position:relative;transform-origin:0 0;width:100%;z-index:3000000}.wp-lightbox-overlay .wp-block-image img{height:var(--wp--lightbox-image-height);min-height:var(--wp--lightbox-image-height);min-width:var(--wp--lightbox-image-width);width:var(--wp--lightbox-image-width)}.wp-lightbox-overlay .wp-block-image figcaption{display:none}.wp-lightbox-overlay button{background:none;border:none}.wp-lightbox-overlay .scrim{background-color:#fff;height:100%;opacity:.9;position:absolute;width:100%;z-index:2000000}.wp-lightbox-overlay.active{visibility:visible}@media not (prefers-reduced-motion){.wp-lightbox-overlay.active{animation:turn-on-visibility .25s both}.wp-lightbox-overlay.active img{animation:turn-on-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active){animation:turn-off-visibility .35s both}.wp-lightbox-overlay.show-closing-animation:not(.active) img{animation:turn-off-visibility .25s both}.wp-lightbox-overlay.zoom.active{animation:none;opacity:1;visibility:visible}.wp-lightbox-overlay.zoom.active .lightbox-image-container{animation:lightbox-zoom-in .4s}.wp-lightbox-overlay.zoom.active .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.active .scrim{animation:turn-on-visibility .4s forwards}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active){animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container{animation:lightbox-zoom-out .4s}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .lightbox-image-container img{animation:none}.wp-lightbox-overlay.zoom.show-closing-animation:not(.active) .scrim{animation:turn-off-visibility .4s forwards}}@keyframes show-content-image{0%{visibility:hidden}99%{visibility:hidden}to{visibility:visible}}@keyframes turn-on-visibility{0%{opacity:0}to{opacity:1}}@keyframes turn-off-visibility{0%{opacity:1;visibility:visible}99%{opacity:0;visibility:visible}to{opacity:0;visibility:hidden}}@keyframes lightbox-zoom-in{0%{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale))}to{transform:translate(-50%,-50%) scale(1)}}@keyframes lightbox-zoom-out{0%{transform:translate(-50%,-50%) scale(1);visibility:visible}99%{visibility:visible}to{transform:translate(calc((-100vw + var(--wp--lightbox-scrollbar-width))/2 + var(--wp--lightbox-initial-left-position)),calc(-50vh + var(--wp--lightbox-initial-top-position))) scale(var(--wp--lightbox-scale));visibility:hidden}}
+/*# sourceURL=https://www.destructoid.com/wp-includes/blocks/image/style.min.css */
+</style>
+<style id="wp-block-list-inline-css">
+ol,ul{box-sizing:border-box}:root :where(.wp-block-list.has-background){padding:1.25em 2.375em}
+/*# sourceURL=https://www.destructoid.com/wp-includes/blocks/list/style.min.css */
+</style>
+<style id="wp-block-paragraph-inline-css">
+.is-small-text{font-size:.875em}.is-regular-text{font-size:1em}.is-large-text{font-size:2.25em}.is-larger-text{font-size:3em}.has-drop-cap:not(:focus):first-letter{float:left;font-size:8.4em;font-style:normal;font-weight:100;line-height:.68;margin:.05em .1em 0 0;text-transform:uppercase}body.rtl .has-drop-cap:not(:focus):first-letter{float:none;margin-left:.1em}p.has-drop-cap.has-background{overflow:hidden}:root :where(p.has-background){padding:1.25em 2.375em}:where(p.has-text-color:not(.has-link-color)) a{color:inherit}p.has-text-align-left[style*="writing-mode:vertical-lr"],p.has-text-align-right[style*="writing-mode:vertical-rl"]{rotate:180deg}
+/*# sourceURL=https://www.destructoid.com/wp-includes/blocks/paragraph/style.min.css */
+</style>
+<style id="wp-block-quote-inline-css">
+.wp-block-quote{box-sizing:border-box;overflow-wrap:break-word}.wp-block-quote.is-large:where(:not(.is-style-plain)),.wp-block-quote.is-style-large:where(:not(.is-style-plain)){margin-bottom:1em;padding:0 1em}.wp-block-quote.is-large:where(:not(.is-style-plain)) p,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) p{font-size:1.5em;font-style:italic;line-height:1.6}.wp-block-quote.is-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-large:where(:not(.is-style-plain)) footer,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) cite,.wp-block-quote.is-style-large:where(:not(.is-style-plain)) footer{font-size:1.125em;text-align:right}.wp-block-quote>cite{display:block}
+/*# sourceURL=https://www.destructoid.com/wp-includes/blocks/quote/style.min.css */
+</style>
+
+
+<style id="gamurs-pushly-banner-style-inline-css">
+.wp-block-gamurs-pushly-banner{box-sizing:border-box;display:flex;font-family:'Titillium Web', Tahoma, Verdana, sans-serif;font-size:16px;font-weight:700;letter-spacing:0.02em;line-height:24px;margin-bottom:0px;max-height:calc(24px*2 + 12px + 12px);overflow:hidden;position:relative;-webkit-text-decoration:none;text-decoration:none;text-indent:0px;text-transform:none;top:0;transition:max-height .3s linear,visibility .3s step-start;width:100%}.wp-block-gamurs-pushly-banner .wp-block-gamurs-pushly-banner__unsubscribe{display:none}.wp-block-gamurs-pushly-banner .wp-block-gamurs-pushly-banner__subscribe{display:block}.wp-block-gamurs-pushly-banner.subscribed .wp-block-gamurs-pushly-banner__unsubscribe{display:block!important}.wp-block-gamurs-pushly-banner.subscribed .wp-block-gamurs-pushly-banner__subscribe{display:none!important}.wp-block-gamurs-pushly-banner .wp-block-gamurs-pushly-banner__wrapper{align-items:center;display:flex;gap:8px;justify-content:space-between;padding:12px 24px 12px 16px;width:100%}.wp-block-gamurs-pushly-banner__text-wrapper{display:inline}@media(max-width:991px){.wp-block-gamurs-pushly-banner__text-wrapper{width:100%}}.wp-block-gamurs-pushly-banner a{-webkit-text-decoration:underline;text-decoration:underline}.wp-block-gamurs-pushly-banner.closed{max-height:0;transition:max-height .3s linear,visibility .3s step-end;visibility:hidden}.wp-block-gamurs-pushly-banner.initial{display:none}.wp-block-gamurs-pushly-banner .icon-close{cursor:pointer}.wp-block-gamurs-pushly-banner.color-default{background-color:var(--blocks-article-banners-bg-announcement);color:var(--blocks-article-banners-fg-announcement)}.wp-block-gamurs-pushly-banner.color-default a{-webkit-text-decoration:underline;text-decoration:underline}.wp-block-gamurs-pushly-banner.color-default a,.wp-block-gamurs-pushly-banner.color-default a:hover,.wp-block-gamurs-pushly-banner.color-default a:visited{color:var(--blocks-article-banners-fg-announcement)}.wp-block-gamurs-pushly-banner.color-default .icon-close svg{fill:var(--blocks-article-banners-fg-announcement)}.wp-block-gamurs-pushly-banner.color-minimal{background-color:var(--blocks-banners-bg-minimal)}.wp-block-gamurs-pushly-banner.color-minimal,.wp-block-gamurs-pushly-banner.color-minimal a,.wp-block-gamurs-pushly-banner.color-minimal a:hover,.wp-block-gamurs-pushly-banner.color-minimal a:visited{color:var(--blocks-banners-body-subtle)}.wp-block-gamurs-pushly-banner.color-minimal .icon-close svg{fill:var(--blocks-banners-body-subtle)}.wp-block-gamurs-pushly-banner.color-subtle{background-color:var(--blocks-banners-bg-subtle)}.wp-block-gamurs-pushly-banner.color-subtle,.wp-block-gamurs-pushly-banner.color-subtle a,.wp-block-gamurs-pushly-banner.color-subtle a:hover,.wp-block-gamurs-pushly-banner.color-subtle a:visited{color:var(--blocks-banners-body-subtle)}.wp-block-gamurs-pushly-banner.color-subtle .icon-close svg{fill:var(--blocks-banners-body-subtle)}.wp-block-gamurs-pushly-banner.color-bold{background-color:var(--blocks-banners-bg-bold)}.wp-block-gamurs-pushly-banner.color-bold,.wp-block-gamurs-pushly-banner.color-bold a,.wp-block-gamurs-pushly-banner.color-bold a:hover,.wp-block-gamurs-pushly-banner.color-bold a:visited{color:var(--blocks-banners-body-bold)}.wp-block-gamurs-pushly-banner.color-bold .icon-close svg{fill:var(--blocks-banners-body-bold)}.wp-block-gamurs-pushly-banner.color-strong{background-color:var(--blocks-banners-bg-strong)}.wp-block-gamurs-pushly-banner.color-strong,.wp-block-gamurs-pushly-banner.color-strong a,.wp-block-gamurs-pushly-banner.color-strong a:hover,.wp-block-gamurs-pushly-banner.color-strong a:visited{color:var(--blocks-banners-body-strong)}.wp-block-gamurs-pushly-banner.color-strong .icon-close svg{fill:var(--blocks-banners-body-strong)}.wp-block-gamurs-pushly-banner.color-sponsored{background-color:var(--blocks-banners-bg-minimal)}.wp-block-gamurs-pushly-banner.color-sponsored,.wp-block-gamurs-pushly-banner.color-sponsored a,.wp-block-gamurs-pushly-banner.color-sponsored a:hover,.wp-block-gamurs-pushly-banner.color-sponsored a:visited{color:var(--blocks-banners-body-subtle)}.wp-block-gamurs-pushly-banner.color-sponsored .icon-close svg{fill:var(--blocks-banners-body-subtle)}.wp-block-gamurs-template-home{transition:padding-top .3s linear}
+
+/*# sourceURL=https://www.destructoid.com/wp-content/themes/destructoid2025/inc/blocks/pushly-banner/style-index.css */
+</style>
+<link rel='stylesheet' id='gamurs-button-style-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/inc/blocks/button/style-index.css?ver=1.1.4' media='all' />
+<style id="gamurs-icon-style-inline-css">
+.wp-block-gamurs-icon{align-items:center;display:flex;height:-moz-min-content;height:min-content;justify-content:center;line-height:1}.wp-block-gamurs-icon svg{fill:var(--blocks-icons-fg)}.wp-block-gamurs-icon.is-size-sm{height:16px;width:16px}.wp-block-gamurs-icon.is-size-sm:after{font-size:16px}.wp-block-gamurs-icon.is-size-sm>*{height:16px;width:16px}.wp-block-gamurs-icon.is-size-md{height:24px;width:24px}.wp-block-gamurs-icon.is-size-md:after{font-size:24px}.wp-block-gamurs-icon.is-size-md>*{height:24px;width:24px}.wp-block-gamurs-icon.is-size-xl{height:40px;width:40px}.wp-block-gamurs-icon.is-size-xl:after{font-size:40px}.wp-block-gamurs-icon.is-size-xl>*{height:40px;width:40px}.wp-block-gamurs-icon.icon-star-filled.is-color-minimal svg,.wp-block-gamurs-icon.icon-star-half.is-color-minimal svg{fill:var(--blocks-star-filled-fg-minimal)}.wp-block-gamurs-icon.icon-star-filled.is-color-subtle svg,.wp-block-gamurs-icon.icon-star-half.is-color-subtle svg{fill:var(--blocks-star-filled-fg-subtle)}.wp-block-gamurs-icon.icon-star-filled.is-color-bold svg,.wp-block-gamurs-icon.icon-star-half.is-color-bold svg{fill:var(--blocks-star-filled-fg-bold)}.wp-block-gamurs-icon.icon-star-filled.is-color-sponsored svg,.wp-block-gamurs-icon.icon-star-half.is-color-sponsored svg{fill:var(--blocks-star-filled-fg-sponsored)}.wp-block-gamurs-icon.icon-star-filled.is-color-strong svg,.wp-block-gamurs-icon.icon-star-half.is-color-strong svg{fill:var(--blocks-star-filled-fg-strong)}.wp-block-gamurs-icon.icon-star-empty.is-color-minimal svg{fill:var(--blocks-star-unfilled-fg-minimal)}.wp-block-gamurs-icon.icon-star-empty.is-color-subtle svg{fill:var(--blocks-star-unfilled-fg-subtle)}.wp-block-gamurs-icon.icon-star-empty.is-color-bold svg{fill:var(--blocks-star-unfilled-fg-bold)}.wp-block-gamurs-icon.icon-star-empty.is-color-sponsored svg{fill:var(--blocks-star-unfilled-fg-minimal)}.wp-block-gamurs-icon.icon-star-empty.is-color-strong svg{fill:var(--blocks-star-unfilled-fg-strong)}.wp-block-gamurs-icon.icon-facebook{margin-left:1px;margin-top:1px}.wp-block-gamurs-icon.icon-twitter{margin-left:1.5px;margin-top:1px}.wp-block-gamurs-icon.icon-google,.wp-block-gamurs-icon.icon-instagram,.wp-block-gamurs-icon.icon-x{margin-left:1px;margin-top:1px}.wp-block-gamurs-icon.icon-youtube{margin-left:1.5px;margin-top:1px}
+
+/*# sourceURL=https://www.destructoid.com/wp-content/themes/destructoid2025/inc/blocks/icon/style-index.css */
+</style>
+
+<link rel='stylesheet' id='azonpress_media_button-css' href='https://www.destructoid.com/wp-content/plugins/azonpress/public/css/media_button.css?ver=2.1.1' media='all' />
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:root { --wp--style--global--content-size: 840px;--wp--style--global--wide-size: 840px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<style id="jetpack-stats-inline-css">
+img#wpstats{display:none}
+/*# sourceURL=jetpack-stats-inline-css */
+</style>
+<link rel='stylesheet' id='hurrytimer-css' href='https://www.destructoid.com/wp-content/uploads/hurrytimer/css/3109f10463e8e36a.css?ver=7.1.4' media='all' />
+<link rel='stylesheet' id='wordpress-popular-posts-css-css' href='https://www.destructoid.com/wp-content/plugins/wordpress-popular-posts/assets/css/wpp.css?ver=7.3.6' media='all' />
+<link rel='stylesheet' id='bootstrap-style-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/bootstrap.min.css?ver=5.3.3' media='all' />
+<link rel='stylesheet' id='destructoid-theme-light-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/themes/light.css?ver=2.1.14' media='all' />
+<link rel='stylesheet' id='destructoid-theme-dark-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/themes/dark.css?ver=2.1.14' media='all' />
+<link rel='stylesheet' id='destructoid-theme-switcher-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/themes/theme-switcher.css?ver=2.1.14' media='all' />
+<link rel='stylesheet' id='destructoid-style-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/style.css?ver=2.1.18' media='all' />
+<link rel='stylesheet' id='destructoid-style-single-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/style-single.css?ver=2.1.31' media='all' />
+<link rel='stylesheet' id='destructoid-codes-hunter-banner-css' href='https://www.destructoid.com/wp-content/themes/destructoid2025/assets/css/codes-hunter-banner.css?ver=1.0.3' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://www.destructoid.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' media='all' />
+<script data-wp-strategy="defer" defer id="gamurs-census-js" src="https://census.gamurs.group/embed.js"></script>
+<script id="addtoany-core-js-before">
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+a2a_config.icon_color="transparent,#ffffff";
+
+//# sourceURL=addtoany-core-js-before
+</script>
+<script id="addtoany-core-js" defer src="https://static.addtoany.com/menu/page.js"></script>
+<script id="jquery-core-js" src="https://www.destructoid.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="addtoany-jquery-js" defer src="https://www.destructoid.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1"></script>
+<script data-wp-strategy="defer" defer id="GAMURSGroup_LazyLoad_Embeds-js" src="https://www.destructoid.com/wp-content/plugins/gamurs-group-lazy-load-embeds/gamurs-group-lazy-load-embeds.js?ver=1.1.0"></script>
+<script id="gamurs-infinite-scroll-js-before">
+window.gamurs_inf_scroll_data=window.gamurs_inf_scroll_data||{};window.growthbook_queue=window.growthbook_queue||[];window.growthbook_queue.push(function(gb){var apply=function(){window.gamurs_inf_scroll_data.finite_article_experience=gb.isOn("finite-article-experience");};apply();document.addEventListener("growthbookdata",apply);});
+//# sourceURL=gamurs-infinite-scroll-js-before
+</script>
+<script data-wp-strategy="defer" defer id="gamurs-infinite-scroll-js" src="https://infinity-js.destructoid.com/destructoid"></script>
+<script data-wp-strategy="defer" defer id="bootstrap-scripts-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/bootstrap.bundle.min.js?ver=5.3.3"></script>
+<script data-wp-strategy="defer" defer id="destructoid-scripts-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/scripts.js?ver=2.1.14"></script>
+<script data-wp-strategy="defer" defer id="destructoid-scripts-single-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/scripts-single.js?ver=2.1.17"></script>
+<script data-wp-strategy="defer" defer id="destructoid-rail-fill-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/rail-fill.js?ver=2026-06-17b"></script>
+<script id="favorites-js-extra">
+var favorites_data = {"ajaxurl":"https://www.destructoid.com/wp-admin/admin-ajax.php","nonce":"91084255fc","favorite":"\u003Cimg src=\"/wp-content/themes/destructoid2025/assets/img/icons/likes-off.png\"\u003E","favorited":"\u003Cimg src=\"/wp-content/themes/destructoid2025/assets/img/icons/likes-on.png\"\u003E","includecount":"1","indicate_loading":"","loading_text":"Loading","loading_image":"","loading_image_active":"","loading_image_preload":"","cache_enabled":"1","button_options":{"button_type":"custom","custom_colors":true,"box_shadow":false,"include_count":true,"default":{"background_default":false,"border_default":false,"text_default":false,"icon_default":false,"count_default":false},"active":{"background_active":false,"border_active":false,"text_active":false,"icon_active":false,"count_active":false}},"authentication_modal_content":"\u003Cp\u003EPlease login to add favorites.\u003C/p\u003E\u003Cp\u003E\u003Ca href=\"#\" data-favorites-modal-close\u003EDismiss this notice\u003C/a\u003E\u003C/p\u003E","authentication_redirect":"","dev_mode":"","logged_in":"","user_id":"0","authentication_redirect_url":"https://www.destructoid.com/robotsneversleep/"};
+//# sourceURL=favorites-js-extra
+</script>
+<script id="favorites-js" src="https://www.destructoid.com/wp-content/plugins/favorites/assets/js/favorites.min.js?ver=2.3.6"></script>
+      <script type="text/javascript" async>
+        ;(function(p,l,o,w,i,n,g){if(!p[i]){p.GlobalSnowplowNamespace=p.GlobalSnowplowNamespace||[]; p.GlobalSnowplowNamespace.push(i);p[i]=function(){(p[i].q=p[i].q||[]).push(arguments) };p[i].q=p[i].q||[];n=l.createElement(o);g=l.getElementsByTagName(o)[0];n.async=1; n.src=w;g.parentNode.insertBefore(n,g)}}(window,document,"script","https://www.destructoid.com/plow-lite-bundle","snowplow"));
+      </script>
+      <script>
+        window.snowplow('newTracker', 'sp1', 'https://spc.destructoid.com/', { 
+          appId: 'destructoid-web',
+        });
+
+                window.snowplow('addGlobalContexts', [              {
+          schema: 'iglu:group.gamurs/article_context/jsonschema/1-0-0',
+          data: {
+            id: '1287087',
+            authors: 'Slobodan Brkljac',
+            authorIds: '1305',
+            articleType: 'Codes',
+            categories: 'Codes',
+            publishedDate: '2026-11-07T02:58:33-06:00',
+            lastModifiedDate: '2026-11-07T02:58:40-06:00',
+            tags: 'codes,roblox codes',
+            title: 'Survive Your Ideas codes (November 2026)',
+          }
+        }
+          ]);
+        
+        let siteTheme = window.localStorage.getItem("GAMURS_Wordpress-theme");
+        let colorScheme = 'Unknown';
+        if (window.matchMedia) {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              colorScheme = 'Dark';
+            } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+              colorScheme = 'Light';
+            }
+        }
+        window.snowplow('addGlobalContexts', [{
+          schema: 'iglu:group.gamurs/site_theme_context/jsonschema/1-1-0',
+          data: {
+            siteTheme: siteTheme,
+            preferredTheme: colorScheme,
+          }
+        }]);
+
+        snowplow('enableActivityTracking', { 
+          minimumVisitLength: 5,
+          heartbeatDelay: 10,
+        });
+
+        var proxyActiveFeatures = window.gg_cfproxy_active_features || [];    
+        console.log("gb active features from proxy:", proxyActiveFeatures); 
+        proxyActiveFeatures.forEach(function(feature) {
+          if (feature.experiment && feature.experimentResult) {
+            window.snowplow('trackStructEvent', {
+              category: 'Experiments',
+              action: 'GrowthBook Experiment Viewed',
+              label: feature.experiment.key,
+              property: feature.experimentResult.key,
+            });
+          }
+        });
+
+        setTimeout(function() {
+          window.snowplow('trackPageView');
+        }, 100);
+
+        window.top.addEventListener('primisPlayerInit', function (e) {
+          if (e.detail.playerApiId == 'primisPlayer') {
+            var player = e.detail;
+            player.addEventListener('adStarted', function (val) {
+              window.snowplow('trackSelfDescribingEvent', {
+                event: {
+                  schema: 'iglu:group.gamurs/primis_ad_impression/jsonschema/1-0-0',
+                  data: {
+                    impressionValue: val.impValue,
+                    servingFee: val.servingFee,
+                  }
+                },
+              });
+            });
+          }
+        });
+      </script>
+    
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+	var dataLayer_content = {"visitorLoginState":"logged-out","pageTitle":"Survive Your Ideas codes (November 2026) &#8211; Destructoid","pagePostType":"post","pagePostType2":"single-post","pageCategory":["codes"],"pageAttributes":["codes","roblox-codes"],"pagePostAuthor":"Slobodan Brkljac","pagePostDate":"7 November 2026","pagePostDateYear":"2026","pagePostDateMonth":"11","pagePostDateDay":"07","pagePostDateDayName":"Saturday","pagePostDateHour":"02","pagePostDateMinute":"58","pagePostDateIso":"2026-11-07T02:58:33-06:00","pagePostDateUnix":1794020313,"postID":1287087,"postFormat":"standard"};
+	gtmDataLayer.push( dataLayer_content );
+</script>
+<script data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','gtmDataLayer','GTM-NWJQJXJ');
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->            <style id="wpp-loading-animation-styles">@-webkit-keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}@keyframes bgslide{from{background-position-x:0}to{background-position-x:-200%}}.wpp-widget-block-placeholder,.wpp-shortcode-placeholder{margin:0 auto;width:60px;height:3px;background:#dd3737;background:linear-gradient(90deg,#dd3737 0%,#571313 10%,#dd3737 100%);background-size:200% auto;border-radius:3px;-webkit-animation:bgslide 1s infinite linear;animation:bgslide 1s infinite linear}</style>
+            <script>
+    var PushlySDK = window.PushlySDK || [];
+    function pushly() { PushlySDK.push(arguments) }
+    pushly('load', {
+        domainKey: decodeURIComponent("RzKZbOHB6lCjdvLsVlmt0WLrMNLrDEpH4OaP"),
+        sw: "/wp-content/plugins/pushly/assets/js/pushly-sdk-worker.js.php",
+        swScope: "/wp-content/plugins/pushly/"    });
+</script>
+<link rel="icon" href="https://www.destructoid.com/wp-content/uploads/2026/01/cropped-favicon.webp?fit=32%2C32" sizes="32x32" />
+<link rel="icon" href="https://www.destructoid.com/wp-content/uploads/2026/01/cropped-favicon.webp?fit=192%2C192" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.destructoid.com/wp-content/uploads/2026/01/cropped-favicon.webp?fit=180%2C180" />
+<meta name="msapplication-TileImage" content="https://www.destructoid.com/wp-content/uploads/2026/01/cropped-favicon.webp?fit=270%2C270" />
+<style type="text/css">
+			html { margin-top: 0 !important; }
+			* html body { margin-top: 0 !important; }
+			#wpadminbar { display: none !important; }
+		</style>
+  <script src="//geniuslinkcdn.com/snippet.min.js" defer></script>
+  <script>
+    if (document.readyState === "loading") {
+      // Loading hasn't finished yet
+      document.addEventListener("DOMContentLoaded", function() {
+        var ale_on_click_checkbox_is_checked="1";
+        if (typeof Georiot !== "undefined") {
+          if (ale_on_click_checkbox_is_checked) {
+            Georiot.amazon.addOnClickRedirect(367867, true);
+          } else {
+            Georiot.amazon.convertToGeoRiotLinks(367867, true);
+          }
+        }
+      });
+    } else {
+      var ale_on_click_checkbox_is_checked="1";
+      if (typeof Georiot !== "undefined") {
+        if (ale_on_click_checkbox_is_checked) {
+          Georiot.amazon.addOnClickRedirect(367867, true);
+        } else {
+          Georiot.amazon.convertToGeoRiotLinks(367867, true);
+        }
+      }
+    }
+  </script>
+<link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-Regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-SemiBold.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-SemiBold-Italic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Inter-SemiBold-Italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Bold.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Bold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Bold-Italic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Bold-Italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Medium.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Medium.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Medium-Italic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Medium-Italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Regular.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Regular-Italic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-Regular-Italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-SemiBold.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-SemiBold.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-SemiBold-Italic.woff" as="font" type="font/woff" crossorigin><link rel="preload" href="/var/www/wp-content/themes/destructoid2025/assets/fonts/Saira-SemiBold-Italic.woff2" as="font" type="font/woff2" crossorigin></head>
+
+<body class="wp-singular post-template-default single single-post postid-1287087 single-format-standard wp-theme-destructoid2025">
+
+	<header class="position-relative">
+
+		<div class="top-buffer"></div>
+
+		<div class="d-lg-none">
+			<div id='pushdown-m' class="gamurs-ad-container" style='width:100%; min-height:50px;'></div>		</div>
+
+		<nav id="top-bar-nav" class="position-fixed overflow-hidden w-100 left-0">
+			<div class="container">
+				<div id="main-nav-container" class="d-flex justify-content-between justify-content-lg-start align-items-center gap-4">
+
+					<a href="https://www.destructoid.com/">
+						<img class="top-bar-nav-logo img-fluid" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/destructoid-logo-header.webp" alt="Destructoid" width="261" height="18" />
+					</a>
+
+					<ul id="destructoid-2025-main-nav" class="d-none d-lg-flex justify-content-end align-items-center flex-grow-1 m-0 p-0 gap-4"><li id="menu-item-1125810" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125810"><a href="https://newsletter.destructoid.com/">Newsletter</a></li>
+<li id="menu-item-1125811" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1125811"><a href="https://www.destructoid.com/category/news/">News</a></li>
+<li id="menu-item-1125812" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125812"><a href="/reviews/">Reviews</a></li>
+<li id="menu-item-1125813" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125813"><a href="/category/feature/">Features</a></li>
+<li id="menu-item-1125814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1125814"><a href="https://www.destructoid.com/latest-articles/">Latest</a></li>
+</ul>					<div id="main-nav-buttons" class="d-flex align-items-center gap-3">
+						<button id="main-login-button" onclick="window.location.href='/my-profile';">
+							<svg class="login-icon" width="24" height="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+								<path d="M651.296021 545.977859c63.557548-42.814108 105.358583-115.235534 105.358583-197.532889 0-133.333728-110.364597-241.9761-245.813498-241.9761-135.451972 0-244.160859 108.642372-244.160859 240.322437 0 82.297354 41.821501 154.739247 105.35756 197.530842-143.80522 55.979966-244.135276 191.069687-244.135276 350.748433l0 0 68.561515 0 0 0c0-158.026106 122.06815-288.197818 277.581016-306.303174 1.674129 0 43.476187-3.284813 78.595033 0l3.350304 0 0 0C708.17445 610.18009 825.215096 738.574319 825.215096 894.946762l0 0 70.239737 0 0 0C893.779681 736.921679 793.447579 600.303138 651.296021 545.977859L651.296021 545.977859zM510.841106 527.85613c-102.008278 0-183.930079-80.644715-183.930079-181.063799 0-100.419084 81.921801-181.062775 183.930079-181.062775 102.007255 0 183.929056 80.643692 183.929056 181.062775C694.770162 447.211415 612.848361 527.85613 510.841106 527.85613L510.841106 527.85613zM510.841106 527.85613" />
+							</svg>
+						</button>
+						<button id="main-search-button">
+							<svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M19.9 20.9751L13.325 14.4001C12.825 14.8334 12.242 15.1709 11.576 15.4126C10.91 15.6542 10.2013 15.7751 9.45 15.7751C7.64735 15.7751 6.12165 15.1501 4.873 13.9001C3.62434 12.6501 3 11.1417 3 9.3751C3 7.60845 3.625 6.1001 4.875 4.8501C6.125 3.6001 7.6375 2.9751 9.4125 2.9751C11.1875 2.9751 12.6959 3.6001 13.9375 4.8501C15.1791 6.1001 15.8 7.6097 15.8 9.37885C15.8 10.093 15.6833 10.7834 15.45 11.4501C15.2167 12.1167 14.8666 12.7417 14.4 13.3251L21 19.8751L19.9 20.9751ZM9.425 14.2751C10.7792 14.2751 11.9303 13.7959 12.8783 12.8376C13.8261 11.8792 14.3 10.7251 14.3 9.3751C14.3 8.0251 13.8261 6.87095 12.8783 5.9126C11.9303 4.95426 10.7792 4.4751 9.425 4.4751C8.057 4.4751 6.89415 4.95426 5.9365 5.9126C4.97884 6.87095 4.5 8.0251 4.5 9.3751C4.5 10.7251 4.97884 11.8792 5.9365 12.8376C6.89415 13.7959 8.057 14.2751 9.425 14.2751Z" />
+							</svg>
+						</button>
+						<button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+							<svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" height="18" viewBox=" 0 -960 960 960" width="18">
+								<path d=" M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"></path>
+							</svg>
+							<svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" height="18" viewBox=" 0 -960 960 960" width="18">
+								<path d=" M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"></path>
+							</svg>
+						</button>
+						<button id="off-canvas-nav-button">
+							<svg class="off-canvas-nav-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<rect x="2" y="7" width="20" height="1.83673" />
+								<rect x="2" y="15.1632" width="20" height="1.83673" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container off-canvas-nav-container">
+			<nav id="off-canvas-nav">
+
+				<!-- Main Nav visible on Mobile -->
+				<div class="accordion d-lg-none d-block">
+					<ul id="destructoid-2025-main-nav" class="d-flex mt-4 m-lg-0 p-0 gap-3 flex-wrap flex-column px-4"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125810"><a href="https://newsletter.destructoid.com/">Newsletter</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1125811"><a href="https://www.destructoid.com/category/news/">News</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125812"><a href="/reviews/">Reviews</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125813"><a href="/category/feature/">Features</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1125814"><a href="https://www.destructoid.com/latest-articles/">Latest</a></li>
+</ul>				</div>
+
+				<div class="d-lg-none menu-divider"></div>
+
+				<!-- Menus to be included in the off canvas nav -->
+				
+				<div id="off-canvas-nav-grid">
+											<div class="menu-section row">
+							<div class="col-lg-3">
+								<h3 class="menu-title">Games</h3>
+							</div>
+							<div class="col-lg-9">
+								<div class="menu-items">
+									<ul id="destructoid-2025-games-nav" class="menu-list row"><li id="menu-item-1125799" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1125799"><a href="https://www.destructoid.com/category/guides/">All Guides</a></li>
+<li id="menu-item-1125808" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125808"><a href="/tag/arc-raiders/">Arc Raiders</a></li>
+<li id="menu-item-1125800" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125800"><a href="/tag/baldurs-gate-3/">Baldur&#8217;s Gate 3</a></li>
+<li id="menu-item-1125801" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125801"><a href="/tag/call-of-duty/">Call of Duty</a></li>
+<li id="menu-item-1125803" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125803"><a href="/tag/clair-obscur-expedition-33/">CO:E33</a></li>
+<li id="menu-item-1125809" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125809"><a href="/tag/disney-dreamlight-valley/">Disney Dreamlight</a></li>
+<li id="menu-item-1125802" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125802"><a href="/tag/destiny-2">Destiny 2</a></li>
+<li id="menu-item-1125804" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125804"><a href="/tag/fortnite/">Fortnite</a></li>
+<li id="menu-item-1125807" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125807"><a href="/tag/grand-theft-auto-6/">GTA 6</a></li>
+<li id="menu-item-1125805" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125805"><a href="/tag/highguard/">Highguard</a></li>
+<li id="menu-item-1125806" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125806"><a href="/tag/roblox/">Roblox</a></li>
+</ul>								</div>
+							</div>
+						</div>
+													<div class="menu-divider"></div>
+												<div class="menu-section row">
+							<div class="col-lg-3">
+								<h3 class="menu-title">Genres</h3>
+							</div>
+							<div class="col-lg-9">
+								<div class="menu-items">
+									<ul id="destructoid-2025-genres-nav" class="menu-list row"><li id="menu-item-1125815" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125815"><a href="/tag/role-playing-games/">RPG</a></li>
+<li id="menu-item-1125816" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125816"><a href="/tag/fighting-games/">Fighting</a></li>
+<li id="menu-item-1125817" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125817"><a href="/tag/first-person-shooter/">FPS</a></li>
+<li id="menu-item-1125818" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125818"><a href="/tag/indie/">Indie</a></li>
+</ul>								</div>
+							</div>
+						</div>
+													<div class="menu-divider"></div>
+												<div class="menu-section row">
+							<div class="col-lg-3">
+								<h3 class="menu-title">Platforms</h3>
+							</div>
+							<div class="col-lg-9">
+								<div class="menu-items">
+									<ul id="destructoid-2025-platforms-nav" class="menu-list row"><li id="menu-item-1125820" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125820"><a href="/tag/switch/">Nintendo Switch</a></li>
+<li id="menu-item-1125821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125821"><a href="https://www.destructoid.com/tag/pc/">PC</a></li>
+<li id="menu-item-1125822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125822"><a href="/tag/ps5/">PS5</a></li>
+<li id="menu-item-1125823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1125823"><a href="/tag/xbox-series-xs/">Xbox</a></li>
+</ul>								</div>
+							</div>
+						</div>
+										</div>
+
+				<section id="off-canvas-nav-footer" class="mt-5 mt-lg-0 px-4 pb-4 d-lg-flex justify-content-between align-items-center">
+					<section id="social-links" class="d-flex justify-content-start align-items-center gap-3">
+	<a href="https://www.facebook.com/Destructoid/" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12.5 1H9.5C8.1739 1 6.9021 1.52678 5.9645 2.46447C5.02678 3.40215 4.5 4.67392 4.5 6V9H1.5V13H4.5V21H8.5V13H11.5L12.5 9H8.5V6C8.5 5.73478 8.6054 5.48043 8.7929 5.29289C8.9804 5.10536 9.2348 5 9.5 5H12.5V1Z" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+	<a href="https://www.instagram.com/destructoid_official" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			<path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="var(--text1)" stroke-width="1.5" />
+			<path d="M17.5 6.50916L17.51 6.49805" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+	<a href="https://www.youtube.com/@DTOID" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M14 12L10.5 14V10L14 12Z" fill="var(--text1)" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			<path d="M2 12.706V11.2909C2 8.39559 2 6.94793 2.90549 6.01646C3.81099 5.08499 5.23656 5.04467 8.08769 4.96403C9.43873 4.92582 10.8188 4.89844 12 4.89844C13.1812 4.89844 14.5613 4.92582 15.9123 4.96403C18.7634 5.04467 20.189 5.08499 21.0945 6.01646C22 6.94793 22 8.39559 22 11.2909V12.706C22 15.6013 22 17.049 21.0945 17.9804C20.189 18.9119 18.7635 18.9522 15.9124 19.0329C14.5613 19.0711 13.1812 19.0985 12 19.0985C10.8188 19.0985 9.43867 19.0711 8.0876 19.0329C5.23651 18.9522 3.81097 18.9119 2.90548 17.9804C2 17.049 2 15.6013 2 12.706Z" stroke="var(--text1)" stroke-width="1.5" />
+		</svg>
+	</a>
+	<a href="https://twitter.com/destructoid" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M16.8196 21.0262L3.75299 4.22617C3.44646 3.83206 3.72731 3.25781 4.2266 3.25781H6.70637C6.89152 3.25781 7.06631 3.34329 7.17998 3.48945L20.2466 20.2894C20.5532 20.6836 20.2723 21.2578 19.773 21.2578H17.2933C17.1081 21.2578 16.9333 21.1723 16.8196 21.0262Z" stroke-width="1.5" stroke="var(--text1)" />
+			<path d="M20 3.25781L4 21.2578" stroke-width="1.5" stroke-linecap="round" stroke="var(--text1)" />
+		</svg>
+	</a>
+</section>					<div class="legal-and-info-links mt-4 mt-lg-0">
+						<a href="/about-us/">About Us</a>
+						<div class="divider"></div>
+						<a href="/ethics/">Ethics</a>
+						<div class="divider"></div>
+						<a href="/contact-us/">Contact Us</a>
+						<a href="/privacy/">Privacy Policy</a>
+						<div class="divider"></div>
+						<a href="/terms/">Terms of Service</a>
+					</div>
+				</section>
+			</nav>
+		</div>
+
+		<!-- Main search -->
+		<div id="main-search-container" class="position-fixed overflow-hidden d-flex justify-content-center align-items-center w-100 top-0 left-0">
+			<div class="container">
+				<form action="/" method="get" class="d-flex justify-content-start align-items-center gap-2 search-form-container mt-3 mt-lg-0">
+	<input type="text" name="s" id="search" placeholder="Search for anything..." value="" />
+	<input type="hidden" value="post" name="post_type" id="post_type" />
+	<button id="main-search-submit" type="submit">
+		<svg class="search-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M19.9 20.9751L13.325 14.4001C12.825 14.8334 12.242 15.1709 11.576 15.4126C10.91 15.6542 10.2013 15.7751 9.45 15.7751C7.64735 15.7751 6.12165 15.1501 4.873 13.9001C3.62434 12.6501 3 11.1417 3 9.3751C3 7.60845 3.625 6.1001 4.875 4.8501C6.125 3.6001 7.6375 2.9751 9.4125 2.9751C11.1875 2.9751 12.6959 3.6001 13.9375 4.8501C15.1791 6.1001 15.8 7.6097 15.8 9.37885C15.8 10.093 15.6833 10.7834 15.45 11.4501C15.2167 12.1167 14.8666 12.7417 14.4 13.3251L21 19.8751L19.9 20.9751ZM9.425 14.2751C10.7792 14.2751 11.9303 13.7959 12.8783 12.8376C13.8261 11.8792 14.3 10.7251 14.3 9.3751C14.3 8.0251 13.8261 6.87095 12.8783 5.9126C11.9303 4.95426 10.7792 4.4751 9.425 4.4751C8.057 4.4751 6.89415 4.95426 5.9365 5.9126C4.97884 6.87095 4.5 8.0251 4.5 9.3751C4.5 10.7251 4.97884 11.8792 5.9365 12.8376C6.89415 13.7959 8.057 14.2751 9.425 14.2751Z" />
+		</svg>
+	</button>
+			<div id="main-search-button-close" class="d-flex justify-content-center align-items-center">
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M18.36 19.78L12 13.42L5.64 19.78L4.22 18.36L10.58 12L4.22 5.64L5.64 4.22L12 10.58L18.36 4.22L19.78 5.64L13.42 12L19.78 18.36L18.36 19.78Z" />
+			</svg>
+		</div>
+	</form>			</div>
+		</div>
+
+	</header>
+
+	<style>
+		/* Desktop ATF leaderboard (BC slot destructoid_dt_leaderboard targets .leaderboard_atf),
+		   on every template. Shown from 1000px, where BC starts offering [970x250],[970x90],[728x90];
+		   250px reserve for CLS. Mobile uses #pushdown-m above. Theme-aware chrome via --bg2.
+		   Flush on the homepage (above its logo/nav); 1rem margin elsewhere, as single had. */
+		.leaderboard_atf {
+			display: none;
+		}
+		@media (min-width: 1000px) {
+			.leaderboard_atf {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				min-height: 250px;
+				margin: 1rem 0;
+				background: var(--bg2);
+			}
+			body.home .leaderboard_atf {
+				margin: 0;
+			}
+		}
+	</style>
+	<div class="leaderboard_atf"></div>
+<main id="gamurs-inf-scroll-main">
+	    <div 
+      class="gamurs-inf-scroll-post post-1287087"
+      data-id="1287087"
+      data-title="Survive Your Ideas codes (November 2026)"
+      data-url="https://www.destructoid.com/survive-your-ideas-codes/"
+      data-categories='codes'
+      data-tags='codes,roblox-codes'
+          >
+      
+<article id="post-1287087" class="single-post">
+	<div class="container gx-0 gx-lg-4">
+			</div>
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-1 d-none d-lg-block">
+				<div id="social-interactions-sidebar" class="position-sticky">
+					<div class="d-flex justify-content-center align-items-center icon likes mb-2">
+						<button class="simplefavorite-button has-count" data-postid="1287087" data-siteid="1" data-groupid="1" data-favoritecount="0" style="box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;"><img src="/wp-content/themes/destructoid2025/assets/img/icons/likes-off.png"><span class="simplefavorite-button-count" style="">0</span></button>					</div>
+											<div class="d-flex justify-content-center align-items-center icon comments mb-2">
+							<a href="#comment-section" class="comments-icon-sidebar">
+								<img src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments">
+							</a>
+						</div>
+									</div>
+				<div id="back-to-top-sidebar" class="position-sticky">
+					<a onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" aria-label="Back to top" title="Back to top">
+						<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<rect y="12.5" width="3.99982" height="3.99982" transform="rotate(-90 0 12.5)" fill="#DE0606" />
+							<rect x="12" y="12.5" width="3.99982" height="3.99982" transform="rotate(-90 12 12.5)" fill="#DE0606" />
+							<rect x="4" y="12.5" width="3.99982" height="3.99982" transform="rotate(-90 4 12.5)" fill="#DE0606" />
+							<rect x="4" y="8.5" width="3.99982" height="3.99982" transform="rotate(-90 4 8.5)" fill="#DE0606" />
+							<rect x="8" y="8.5" width="3.99982" height="3.99982" transform="rotate(-90 8 8.5)" fill="#DE0606" />
+							<rect x="6" y="4.5" width="3.99982" height="3.99982" transform="rotate(-90 6 4.5)" fill="#DE0606" />
+							<rect x="8" y="12.5" width="3.99982" height="3.99982" transform="rotate(-90 8 12.5)" fill="#DE0606" />
+						</svg>
+					</a>
+				</div>
+			</div>
+
+			<div class="col-lg-11">
+				<div class="row">
+					<div class="col-lg-7">
+						<div class="post-meta">
+							<nav id="breadcrumb" class="d-flex justify-content-start align-items-center mb-3 gap-1">
+								<a href="https://www.destructoid.com">Home</a>
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="6" y="6" width="5" height="5" fill="var(--primary-red-strawberry)" />
+								</svg>
+																	<a href="https://www.destructoid.com/category/codes/">Codes</a>
+																</nav>
+							<h1 class="post-title my-3">
+								Survive Your Ideas codes (November 2026)							</h1>
+							<p class="post-summary my-3">
+								Your vocabulary might save your life, but these Survive Your Ideas codes will ensure it.							</p>
+							<div class="article-byline d-flex align-items-center gap-2 mt-3 mb-4">
+								<img class="article-byline-avatar" src="https://secure.gravatar.com/avatar/449e8edfa6aa7437c4c07ee408f8afb1b94a5f693e3b2e43fda6a705eec31623?s=64&d=simple_local_avatar&r=g" alt="Slobodan Brkljac" width="36" height="36" />
+								<div class="article-byline-text">
+									<a class="fw-bold author-name" href="https://www.destructoid.com/author/slobodan-brkljacgmail-com/">Slobodan Brkljac</a>
+									<br>
+									<div>
+										<span class="post-published">Published: Nov 7, 2026 2:58 am</span>
+																			</div>
+								</div>
+							</div>
+						</div>
+													<div class="featured-image-container mt-4 pt-lg-2">
+								<img width="1280" height="720" src="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?fit=1280%2C720" class="featured-image wp-post-image" alt="survive your ideas featured image" fetchpriority="high" sizes="(min-width: 992px) 832px, (min-width: 768px) 696px, (min-width: 576px) 516px, calc(100vw - 24px)" decoding="async" srcset="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-featured-image.webp?w=460 460w" />							</div>
+															<p class="featured-image-caption mt-0 text-center mb-4">
+									Image via Survive Your Ideas								</p>
+							
+						<div class="post-content">
+							<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"> <p class="wp-block-paragraph"><strong>Updated: November 7, 2026</strong></p>    <p class="wp-block-paragraph">We added new codes!</p> </blockquote><div class="has-wrapper position-sticky is-video-ad wp-block-gamurs-ad"><div class="wp-block-gamurs-ad__creative video-player-container"><div class="video-player-title">Recommended Videos</div><div class="video-player"><div class="s2nPlayer"></div><script src="https://players.voltaxservices.io/players/gamurs/destructoid/code?mm-subId=1"></script></div></div></div>    <p class="wp-block-paragraph">If your pen is mightier than the sword, make sure it is at least a Golden Pencil. In <em>Survive Your Ideas</em>, you are either the one typing “Tsunami” or the one drowning in it. These <em>Survive Your Ideas</em> codes are the best way to stock up on Lucky Spins so you can snag high-tier survival gear before the lobby turns into a Dinosaur buffet.</p>	<div class="initial color-subtle wp-block-gamurs-pushly-banner" data-id="1287087" data-content="Follow this article to get updates">
+	<div class="wp-block-gamurs-pushly-banner__wrapper">
+		<div class="wp-block-gamurs-pushly-banner__text-wrapper">
+			<strong>Follow this article to get updates</strong>
+		</div>
+		<div class="wp-block-gamurs-pushly-banner__subscribe">
+			
+<button class="has-color-subtle has-prominence-primary has-text has-icon wp-block-gamurs-button" type="button" onclick="(function(target){window.localStorage.setItem('pushly:article_1287087','follow');window.pushly('profile_append',{'articles':[1287087]});target.closest('.wp-block-gamurs-pushly-banner').classList.add('subscribed');snowplow('trackStructEvent', {category: 'pushly_banner', action: 'subscribe', value: 1287087});})(event.target);">
+				
+<span class="icon-plus is-size-md is-color-minimal wp-block-gamurs-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox=" 0 -960 960 960" width="24px">
+				<path d=" M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path>
+			</svg>
+			</span>				<div>Follow</div>
+		</button>		</div>
+		<div class="wp-block-gamurs-pushly-banner__unsubscribe">
+			
+<button class="has-color-subtle has-prominence-primary has-text has-icon wp-block-gamurs-button" type="button" onclick="(function(target){window.localStorage.setItem('pushly:article_1287087','unfollow');window.pushly('profile_remove',{'articles':[1287087]});target.closest('.wp-block-gamurs-pushly-banner').classList.remove('subscribed');snowplow('trackStructEvent', {category: 'pushly_banner', action: 'unsubscribe', value: 1287087});})(event.target);">
+				
+<span class="icon-plus is-size-md is-color-minimal wp-block-gamurs-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewbox=" 0 -960 960 960" width="24px">
+				<path d=" M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"></path>
+			</svg>
+			</span>				<div>Unfollow</div>
+		</button>		</div>
+			</div>
+</div>
+<figure class="wp-block-embed beehiiv-embed-wrap"><iframe src="https://embeds.beehiiv.com/a8d62108-86ed-4039-bf49-44877ba62c15" data-test-id="beehiiv-embed" width="100%" height="320" frameborder="0" scrolling="no" style="border-radius: 4px; border: 2px solid #e5e7eb; margin: 0; background-color: transparent;"></iframe></figure>    <h2 id="h-all-survive-your-ideas-codes-list" class="wp-block-heading">All Survive Your Ideas codes list</h2>    <p class="wp-block-paragraph">Redeeming <em>Survive Your Ideas</em> codes is your shortcut to grabbing elusive Meta Words and Legendary gear like the Force Field. Whether you are dodging a Nuke or trying to stay dry during a flood, every extra spin counts toward your survival and helps you roll for a game-changing Grapple Hook. <strong>If you are looking to outrun more than just a literal dictionary, head over to our <a href="https://www.destructoid.com/ragdoll-playground-codes/" target="_blank" rel="noreferrer noopener"><em>Ragdoll Playground</em> codes</a> article for more chaotic fun.</strong></p><div class="gamurs-ad-slot" data-slot-index="0"></div>    <h3 id="h-active-survive-your-ideas-codes" class="wp-block-heading">Active Survive Your Ideas codes</h3>    <ul class="wp-block-list"> <li><strong>THANKYOU</strong>—Redeem for 5 Lucky Spins <strong>(New)</strong></li></ul><div class="ch-toggle" data-extension-key="destructoid-codes-extension-variants" data-newsletter-key="destructoid-codes-newsletter"><div class="wp-block-gamurs-ab-testing__custom" data-key-value="extension-social-proof"><div class="ch-unit" data-key-value="extension-social-proof"><div class="ch-mark"><img referrerpolicy="no-referrer" src="https://lh3.googleusercontent.com/k6BG14VD03A6WVCSO32hTajgQXHrj1TfEH2sH1xtQPRqttme2K-w8ZVEfhOGjq0uz4GbAVCUxYDZu23fc23FV0vZMw=s120" alt="Codes Hunter"></div><div class="ch-body"><span class="ch-eyebrow ch-eyebrow--faces"><span class="ch-faces"><i style="background:linear-gradient(135deg,#ffb35c,#ff7a45)"></i><i style="background:linear-gradient(135deg,#7ce0b0,#16a35a)"></i><i style="background:linear-gradient(135deg,#9db1ff,#4f7cff)"></i><i style="background:linear-gradient(135deg,#d9a7ff,#8b5cf6)"></i></span>Installed by Roblox players this week</span><p class="ch-title">8,000+ Roblox players already have our codes list</p><p class="ch-sub">Codes Hunter puts our <strong>live codes database</strong> in your browser. Install today and never miss a Roblox code again.</p><div class="ch-stats"><div class="ch-stat"><b>8,000+</b><span>Installs</span></div><div class="ch-stat"><b><span class="ch-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 4.8</b><span>Web Store rating</span></div></div></div><div class="ch-actions"><a class="ch-btn" href="https://chromewebstore.google.com/detail/codes-hunter-roblox-codes/nojllijcdcbeobljfpkjbpeajcbfadfk" target="_blank" rel="noopener">Add Codes Hunter to Chrome</a><span class="ch-microcopy">Chrome Web Store</span></div><button class="ch-x" type="button" aria-label="Dismiss">&#10005;</button></div></div><div class="wp-block-gamurs-ab-testing__custom" data-key-value="extension-demo-static"><div class="ch-unit ch-unit--demo" data-key-value="extension-demo-static"><div class="ch-body"><span class="ch-eyebrow">Codes expire without warning</span><p class="ch-title">This is what Codes Hunter shows you.</p><p class="ch-sub">Codes Hunter does the codes hunting for you.</p><div class="ch-actions ch-actions--inline"><a class="ch-btn" href="https://chromewebstore.google.com/detail/codes-hunter-roblox-codes/nojllijcdcbeobljfpkjbpeajcbfadfk" target="_blank" rel="noopener">Add Codes Hunter</a><div class="ch-rating"><span class="ch-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><b>4.8</b><span class="ch-dot"></span><span>8,000+ users</span></div></div></div><div class="ch-shot ch-shot--still" aria-hidden="true"><div class="chx"><div class="chx-head"><svg class="chx-logo" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1.7 21 6.85v10.3L12 22.3 3 17.15V6.85L12 1.7Z" stroke="#FF6600" stroke-width="2.1" stroke-linejoin="round"/><path d="M12 7.6l3.9 2.23v4.34L12 16.4l-3.9-2.23V9.83L12 7.6Z" fill="#FF6600"/></svg><div class="chx-name"><b>Codes Hunter</b><span>from <i>Bloxinformer</i></span></div><div class="chx-icons"><i></i><i></i></div></div><div class="chx-field"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="9" cy="9" r="5.5"/><path d="M13.2 13.2 17 17"/></svg><span class="chx-typed"></span><i class="chx-caret"></i></div><div class="chx-meta"><b>Sailor Piece</b><em>8 codes</em><span class="chx-found">3 games</span></div><div class="chx-card"><div class="chx-view chx-view--codes"><div class="chx-row" data-code="RAIDS"><span><code>RAIDS</code><small>Free rewards</small></span><span class="chx-copy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.2" y="5.2" width="8" height="8" rx="1.8"/><path d="M10.8 3.3H3.9c-.9 0-1.6.7-1.6 1.6v6.9"/></svg></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div><div class="chx-row" data-code="SORRYFORRESTARTGUYSTPBUG3"><span><code>SORRYFORRESTARTGUYSTPBUG3</code><small>50&times; Power Shard, 75&times; Passive Shard, 12&times; Secret Ch&hellip;</small></span><span class="chx-copy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.2" y="5.2" width="8" height="8" rx="1.8"/><path d="M10.8 3.3H3.9c-.9 0-1.6.7-1.6 1.6v6.9"/></svg></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div><div class="chx-row" data-code="MASTERY"><span><code>MASTERY</code><small>Free rewards</small></span><span class="chx-copy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.2" y="5.2" width="8" height="8" rx="1.8"/><path d="M10.8 3.3H3.9c-.9 0-1.6.7-1.6 1.6v6.9"/></svg></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div><div class="chx-row" data-code="GHOULUPDATE"><span><code>GHOULUPDATE</code><small>Free rewards</small></span><span class="chx-copy"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5.2" y="5.2" width="8" height="8" rx="1.8"/><path d="M10.8 3.3H3.9c-.9 0-1.6.7-1.6 1.6v6.9"/></svg></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div></div><div class="chx-view chx-view--games"><div class="chx-game" data-game="Sail for Brainrots"><span><b>Sail for Brainrots</b><small>ID: 9676360773</small></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div><div class="chx-game" data-game="Sail Your Boat"><span><b>Sail Your Boat</b><small>ID: 9866894975</small></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div><div class="chx-game" data-game="Sailor Piece"><span><b>Sailor Piece</b><small>ID: 9186719164</small></span><svg class="chx-chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 4.5 6 8l3.5-3.5"/></svg></div></div><div class="chx-toast">&#10003; Copied: <code>RAIDS</code></div></div></div></div><button class="ch-x" type="button" aria-label="Dismiss">&#10005;</button></div></div><div class="wp-block-gamurs-ab-testing__custom" data-key-value="newsletter"><div class="ch-unit ch-unit--news" data-key-value="newsletter"><div class="ch-wordmark"><img src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/problox-logo.png" alt="Problox"></div><div class="ch-body"><div class="ch-live"><p class="ch-title">Stay up-to-date on ALL the latest Roblox news and releases</p><p class="ch-sub">Join <strong>Problox</strong>, our free newsletter &mdash; the biggest new games, updates, events and codes, in one email.</p></div><div class="ch-done"><p class="ch-title">You&#8217;re in &mdash; welcome to Problox</p><p class="ch-sub">Your first issue lands soon. Keep copying codes; we&#8217;ll handle the news.</p></div></div><div class="ch-actions ch-actions--form"><form class="ch-form" novalidate><input type="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address"><button type="submit" class="ch-btn ch-btn--news">Subscribe free</button></form><p class="ch-error">Please enter a valid email address.</p></div><button class="ch-x" type="button" aria-label="Dismiss">&#10005;</button></div></div></div><ul class="wp-block-list"> </ul>    <h3 id="h-expired-survive-your-ideas-codes" class="wp-block-heading">Expired Survive Your Ideas codes</h3>    <ul class="wp-block-list"> <li><strong>There are currently no expired <em>Survive Your Ideas</em> codes.</strong> </li> </ul>    <blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow"> <p class="wp-block-paragraph"><strong>Related</strong>: <a href="https://www.destructoid.com/punch-walls-to-escape-codes/" target="_blank" rel="noreferrer noopener">Punch Walls To Escape codes</a></p> </blockquote>    <h2 id="h-how-to-redeem-codes-in-survive-your-ideas" class="wp-block-heading">How to redeem codes in Survive Your Ideas</h2>    <p class="wp-block-paragraph">Claiming your freebies in <em><a href="https://www.roblox.com/games/77900175935766/Survive-Your-Ideas" target="_blank" rel="noreferrer noopener">Survive Your Ideas</a></em> is definitely easier than spelling “Apocalypse” under pressure. Here’s what you need to do:</p>    <figure class="wp-block-image size-large"><img data-recalc-dims="1" decoding="async" height="576" width="1024" src="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?quality=75&#038;w=840&#038;resize=1024%2C576" alt="survive your ideas how to redeem codes" class="wp-image-1287116" srcset="https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?w=1200 1200w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/11/survive-your-ideas-how-to-redeem-codes.webp?w=460 460w" sizes="(max-width: 1000px) 100vw, 1000px"><figcaption class="wp-element-caption">Image by Destructoid</figcaption></figure><div class="gamurs-ad-slot" data-slot-index="1"></div>    <ol class="wp-block-list"> <li>Start <em><strong>Survive Your Ideas</strong></em> in Roblox. </li>    <li>Click on <strong>Codes</strong> at the top of the screen. </li>    <li>Enter your code in the <strong>Type a Code</strong> field. </li>    <li>Hit the <strong>Redeem</strong> button. </li> </ol>    <h2 id="h-official-wiki-trello-board-and-discord-server-information-for-survive-your-ideas" class="wp-block-heading">Official Wiki, Trello board, and Discord server information for Survive Your Ideas</h2>    <p class="wp-block-paragraph">To stay ahead of the latest disasters and find new words to terrorize your friends with, <a href="https://discord.com/invite/KuukgXdhfp" target="_blank" rel="noreferrer noopener">the official <em>Survive Your Ideas</em> Discord</a> is the place to be. While there is no dedicated Trello board yet, the community group is very active with word suggestions and updates. Don’t forget to check out the <a href="https://www.roblox.com/communities/1111201510/Survive-Your-Ideas#!/about" target="_blank" rel="noreferrer noopener">official Roblox group</a> and the developer’s X account (<a href="https://x.com/SlayHatt" target="_blank" rel="noreferrer noopener">@SlayHatt</a>) as well for more announcements. </p>    <p class="wp-block-paragraph"><strong>If you need to stock up on even more freebies for your favorite experiences, head back to our <a href="https://www.destructoid.com/?s=roblox+codes" target="_blank" rel="noreferrer noopener">Roblox codes</a> section to see what is trending.</strong></p><div class="census-poll" data-property="destructoid" data-slot="global" data-placement="content" data-categories="codes" data-tags="codes,roblox-codes"></div>						</div>
+
+						<section class="post-footer">
+							<div class="divider my-4 my-lg-5"></div>
+							<section class="author-info">
+								<div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+									<div class="d-flex justify-content-start align-items-center gap-3">
+										<img class="author-avatar" src="https://secure.gravatar.com/avatar/449e8edfa6aa7437c4c07ee408f8afb1b94a5f693e3b2e43fda6a705eec31623?s=64&d=simple_local_avatar&r=g" alt="Slobodan Brkljac" width="24" height="24" />
+										<div>
+											<a class="author-name" href="https://www.destructoid.com/author/slobodan-brkljacgmail-com/">Slobodan Brkljac</a>
+																					</div>
+									</div>
+									<div class="social d-flex justify-content-start justify-content-lg-end align-items-center d-none d-lg-flex">
+						</div>								</div>
+								<p class="author-bio mb-0 mt-3">Slobodan Brkljac is a gaming writer dedicated to exploring all corners of Roblox. While he loves him some Horizon Zero Dawn, Tomb Raider, and Uncharted, he's always on the hunt for the next big Roblox title. When he isn't changing his avatar's haircut for the 100th time, you can find him hitting a new personal record at the gym, traveling, or desperately looking for that perfect latte.</p>
+																<div class="social d-flex justify-content-start justify-content-lg-end align-items-center d-lg-none mt-3">
+						</div>							</section>
+							<div class="divider my-4 my-lg-5"></div>
+															<p class="post-tags">
+									<strong>Tags:</strong>
+																			<a class="px-2 py-1" href="https://www.destructoid.com/tag/codes/">codes</a>
+																			<a class="px-2 py-1" href="https://www.destructoid.com/tag/roblox-codes/">roblox codes</a>
+																	</p>
+														<div id="social-interactions" class="d-flex justify-content-center align-items-center gap-2 mt-4 mt-lg-5">
+								<div class="d-flex justify-content-center align-items-center w-100 gap-2 likes">
+									<button class="simplefavorite-button has-count" data-postid="1287087" data-siteid="1" data-groupid="1" data-favoritecount="0" style="box-shadow:none;-webkit-box-shadow:none;-moz-box-shadow:none;"><img src="/wp-content/themes/destructoid2025/assets/img/icons/likes-off.png"><span class="simplefavorite-button-count" style="">0</span></button>								</div>
+																	<a id="comments-counter" href="#comment-section" class="d-flex justify-content-center align-items-center w-100 gap-2 comments">
+										<img src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments">
+										<span class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1287087"></span>
+									</a>
+															</div>
+							<div id="sharing" class="d-flex align-items-center justify-content-between mt-2 gap-2 px-3">
+								<span class="me-2">Share<span class="d-none d-lg-inline"> this article</span></span>
+								<div class="sharing-buttons d-flex justify-content-center align-items-center gap-3">
+									<div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_24 addtoany_list" data-a2a-url="https://www.destructoid.com/survive-your-ideas-codes/" data-a2a-title="Survive Your Ideas codes (November 2026)"><a class="a2a_button_copy_link" href="https://www.addtoany.com/add_to/copy_link?linkurl=https%3A%2F%2Fwww.destructoid.com%2Fsurvive-your-ideas-codes%2F&amp;linkname=Survive%20Your%20Ideas%20codes%20%28November%202026%29" title="Copy Link" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_x" href="https://www.addtoany.com/add_to/x?linkurl=https%3A%2F%2Fwww.destructoid.com%2Fsurvive-your-ideas-codes%2F&amp;linkname=Survive%20Your%20Ideas%20codes%20%28November%202026%29" title="X" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fwww.destructoid.com%2Fsurvive-your-ideas-codes%2F&amp;linkname=Survive%20Your%20Ideas%20codes%20%28November%202026%29" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_reddit" href="https://www.addtoany.com/add_to/reddit?linkurl=https%3A%2F%2Fwww.destructoid.com%2Fsurvive-your-ideas-codes%2F&amp;linkname=Survive%20Your%20Ideas%20codes%20%28November%202026%29" title="Reddit" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_bluesky" href="https://www.addtoany.com/add_to/bluesky?linkurl=https%3A%2F%2Fwww.destructoid.com%2Fsurvive-your-ideas-codes%2F&amp;linkname=Survive%20Your%20Ideas%20codes%20%28November%202026%29" title="Bluesky" rel="nofollow noopener" target="_blank"></a></div></div>								</div>
+							</div>
+							<ul class="affiliate-policy px-3">
+								<li class="mb-3">Destructoid is supported by our audience. When you purchase through links on our site, we may earn a small affiliate commission. <a target="_blank" href="/affiliate-policy/">Learn more about our Affiliate Policy</a>.</li>
+								<li>Like our content? Set Destructoid as a <a target="_blank" href="https://www.google.com/preferences/source?q=destructoid.com">Preferred Source on Google</a> in just one step to ensure you see us more frequently in your Google searches!</li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-lg-5 d-none d-lg-block">
+						<div class="dto-rail-column"><div class="census-poll" data-property="destructoid" data-slot="global" data-placement="rail" data-categories="codes" data-tags="codes,roblox-codes"></div><div id='rail-scroll-parent' class="gamurs-ad-container" style='width:100%; min-height:430px;'></div></div>
+					</div>
+				</div>
+				<div id="after-footer-content">
+					<div class="row gx-0 gx-lg-4">
+													<div class="col-12">
+								<div class="divider mt-5 my-lg-5"></div>
+							</div>
+												<div class="col-lg-8">
+																						<section id="comment-section" class="text-center mx-3 mx-lg-0 mt-5">
+									
+<div class="comments-wrapper is-collapsible">
+			<button type="button" id="comments-expand-button" class="view-comments-toggle" aria-expanded="false" aria-controls="disqus_thread">
+			View Comments
+		</button>
+	
+	<div id="disqus_thread" hidden></div>
+
+	<script>
+				var disqus_config = function () {
+			this.page.url = 'https://www.destructoid.com/survive-your-ideas-codes/';
+			this.page.identifier = 'dtoidwp_1287087';
+		};
+		
+		// Guard: only load Disqus for the initial/first article.
+		//
+		// The infinite scroll JS bundle appends the new article's div to the DOM
+		// *before* eval-ing its inline scripts. So by the time this script runs
+		// for an appended article there will be more than one .gamurs-inf-scroll-post
+		// element on the page (2 = initial + this one; 3+ = further scrolled articles).
+		//
+		// Without this guard, eval-ing this script for a non-initial article would
+		// reload embed.js with that article's disqus_config. Because browser DOM
+		// getElementById returns the *first* match, Disqus would render into the
+		// initial article's #disqus_thread, overwriting its comments — appearing
+		// "as if from the first/main article".
+		//
+		// This also handles stale Cloudflare KV cache: articles cached before the
+		// PHP gamurs_inf_scroll_initial_article check was introduced may still
+		// include this template in their HTML. The JS guard catches that case too.
+		var isInitialArticle = true;
+		var clickToExpand = true;
+		var infScrollPostCount = document.querySelectorAll('.gamurs-inf-scroll-post').length;
+
+		function destructoidLoadDisqus() {
+			var d = document, s = d.createElement('script');
+			s.src = 'https://Destructoid.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+		}
+
+		if (isInitialArticle && infScrollPostCount <= 1) {
+			if (clickToExpand) {
+				(function () {
+					var btn = document.getElementById('comments-expand-button');
+					var thread = document.getElementById('disqus_thread');
+					if (!btn || !thread) {
+						destructoidLoadDisqus();
+						return;
+					}
+					var loaded = false;
+					function expand() {
+						if (loaded) return;
+						loaded = true;
+						thread.removeAttribute('hidden');
+						btn.setAttribute('aria-expanded', 'true');
+						btn.style.display = 'none';
+						destructoidLoadDisqus();
+					}
+					btn.addEventListener('click', expand);
+					// In-article comment count link and sidebar comments icon
+					// already scroll to #comment-section via their href; expand
+					// the thread on click so users land on a populated section.
+					document.querySelectorAll('#comments-counter, .comments-icon-sidebar').forEach(function (el) {
+						el.addEventListener('click', expand);
+					});
+					// Deep link: if the page is loaded with #comment-section or
+					// #disqus_thread in the URL (e.g. a comment permalink shared
+					// from another tab), auto-expand so the user lands on a
+					// populated thread instead of an empty button.
+					if (location.hash === '#comment-section' || location.hash === '#disqus_thread') {
+						expand();
+					}
+					window.addEventListener('hashchange', function () {
+						if (location.hash === '#comment-section' || location.hash === '#disqus_thread') {
+							expand();
+						}
+					});
+				})();
+			} else {
+				destructoidLoadDisqus();
+			}
+		} else {
+			// Non-initial article: do not load Disqus. Also remove this comment
+			// section from the DOM in case it arrived via stale cached HTML, to
+			// prevent empty whitespace and duplicate IDs (#comment-section,
+			// #disqus_thread) from polluting the page.
+			var commentSections = document.querySelectorAll('#comment-section');
+			if (commentSections.length > 1) {
+				commentSections[commentSections.length - 1].remove();
+			}
+		}
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow"> comments powered by Disqus. </a></noscript>
+</div>
+								</section>
+													</div>
+						<div class="col-lg-4 mt-5 mt-lg-0">
+															<div id='rail-scroll-parent-2' class="gamurs-ad-container" style='width:100%; min-height:430px;'></div>													</div>
+											</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</article>
+
+<script>
+	// Only call DISQUSWIDGETS for the initial article to avoid overwriting comments
+		try {
+		if ( typeof DISQUSWIDGETS !== 'undefined' ) {
+			DISQUSWIDGETS.getCount({reset: true});
+		}
+	} catch (e) {
+		console.log(e)
+	}
+		window.gamursInfScrollPageViewsURLs = window.gamursInfScrollPageViewsURLs || [window.location.href];
+
+
+	window.gamursInfScrollTargetingParams = window.gamursInfScrollTargetingParams || [];
+	window.gamursInfScrollTargetingParams['1287087'] = {
+		post_id: '1287087',
+		authors: 'Slobodan Brkljac',
+		category: ["codes"],
+		tag: ["codes","roblox-codes"]
+	}
+
+	window.gamursInfScrollOnUrlChange = function(permalink) {
+
+		window.gamursInfScrollPageViewsURLs = window.gamursInfScrollPageViewsURLs || [];
+		if (!window.gamursInfScrollPageViewsURLs.includes(permalink)) {
+			window.gamursInfScrollPageViewsURLs.push(permalink);
+
+			try {
+				gtag('config', "UA-550649-1", {"dimension1":"Slobodan Brkljac","dimension7":"focus_keyword_not_set","dimension9":"codes","dimension10":"2026-11-07T02:58:33-06:00"})
+			} catch (e) {
+				console.log(e)
+			}
+
+			try {
+				gtag('config', "G-MVNJTGZFK4", {"dimension1":"Slobodan Brkljac","dimension7":"focus_keyword_not_set","dimension9":"codes","dimension10":"2026-11-07T02:58:33-06:00"})
+			} catch (e) {
+				console.log(e)
+			}
+
+			try {
+				window.snowplow(
+					'trackPageView',
+										{ context: [              {
+          schema: 'iglu:group.gamurs/article_context/jsonschema/1-0-0',
+          data: {
+            id: '1287087',
+            authors: 'Slobodan Brkljac',
+            authorIds: '1305',
+            articleType: 'Codes',
+            categories: 'Codes',
+            publishedDate: '2026-11-07T02:58:33-06:00',
+            lastModifiedDate: '2026-11-07T02:58:40-06:00',
+            tags: 'codes,roblox codes',
+            title: 'Survive Your Ideas codes (November 2026)',
+          }
+        }
+          ] },
+									);
+			} catch (e) {
+				console.log(e)
+			}
+			try {
+				pSUPERFLY.virtualPage({
+					sections: '"codes"',
+					authors: 'Slobodan Brkljac',
+					path: location.pathname,
+					title: "Survive Your Ideas codes (November 2026)"
+				})
+			} catch (e) {
+				console.log(e)
+			}
+		}
+	}
+</script>
+
+<script type="text/javascript">
+    window.gamursInfScrollOnInfiniteScrollAppend = undefined;
+		window.gamursInfScrollOnInfiniteScrollAppend = function(postId) {
+			if (window.addStickySidebar !== undefined) {
+				window.addStickySidebar(postId);
+			}
+		};
+</script>
+    </div>
+    </main>
+
+<div class="divider my-5"></div>
+
+<section id="related-posts" class="mt-5 pt-3 pt-lg-0">
+	<div class="container">
+		<h3 class="section-title mb-5">Related posts</h3>
+			<div class="row gy-5 g-lg-4">
+						<div class="col-lg-6">
+					<a href="https://www.destructoid.com/anime-fighters-simulator-codes/" class="article_related-posts_more-on-destructoid_category_codes_1">
+	<article class="article-card  h-100 position-relative small-card" data-post-id="431964">
+		<div class="image-container position-relative">
+							<div class="gradient-layer position-absolute"></div>
+															<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?fit=460%2C259" class="img-fluid wp-post-image" alt="Anime Fighters Simulator promo image" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?w=1200 1200w, https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2023/11/anime-fighters-simulator-feature-image.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />		</div>
+		<div class="p-3">
+			<h3 class="mb-3 position-relative">Anime Fighters Simulator (AFS) codes (November 2026)</h3>				<section id="author-comments-likes">
+		<p class="author mb-0">Kristina Timotic</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="431964" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_431964">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="431964">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="431964" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="431964" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+			</div>
+			</article>
+</a>				</div>
+								<div class="col-lg-6">
+					<a href="https://www.destructoid.com/grimoires-era-codes/" class="article_related-posts_more-on-destructoid_category_codes_2">
+	<article class="article-card  h-100 position-relative small-card" data-post-id="455731">
+		<div class="image-container position-relative">
+							<div class="gradient-layer position-absolute"></div>
+															<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?fit=460%2C259" class="img-fluid wp-post-image" alt="Grimoires Era in-game screenshot" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?w=1200 1200w, https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2024/01/grimoires-era-feature.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />		</div>
+		<div class="p-3">
+			<h3 class="mb-3 position-relative">Grimoires Era codes (November 2026)</h3>				<section id="author-comments-likes">
+		<p class="author mb-0">Maja Kovačević</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="455731" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_455731">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="455731">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="455731" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="455731" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+			</div>
+			</article>
+</a>				</div>
+								<div class="col-lg-6">
+					<a href="https://www.destructoid.com/ishin-codes/" class="article_related-posts_more-on-destructoid_category_codes_3">
+	<article class="article-card  h-100 position-relative small-card" data-post-id="1277397">
+		<div class="image-container position-relative">
+							<div class="gradient-layer position-absolute"></div>
+															<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?fit=460%2C259" class="img-fluid wp-post-image" alt="Ishin promo image" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/10/ishin-codes.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />		</div>
+		<div class="p-3">
+			<h3 class="mb-3 position-relative">Ishin codes (November 2026)</h3>				<section id="author-comments-likes">
+		<p class="author mb-0">Milica Brkovic</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1277397" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1277397">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1277397">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="1277397" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1277397" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+			</div>
+			</article>
+</a>				</div>
+								<div class="col-lg-6">
+					<a href="https://www.destructoid.com/anime-ball-vs-ball-codes/" class="article_related-posts_more-on-destructoid_category_codes_4">
+	<article class="article-card  h-100 position-relative small-card" data-post-id="1278665">
+		<div class="image-container position-relative">
+							<div class="gradient-layer position-absolute"></div>
+															<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?fit=460%2C259" class="img-fluid wp-post-image" alt="Promo for Anime Ball vs Ball" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/10/anime-ball-vs-ball-featured.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />		</div>
+		<div class="p-3">
+			<h3 class="mb-3 position-relative">Anime Ball vs Ball codes (November 2026)</h3>				<section id="author-comments-likes">
+		<p class="author mb-0">Ana Mitic</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1278665" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1278665">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1278665">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="1278665" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1278665" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+			</div>
+			</article>
+</a>				</div>
+					</div>
+		</div>
+</section>
+
+<div class="divider my-5"></div>
+
+<section id="newsletter-section" class="mt-5 pt-3 pt-lg-0">
+	<div class="container">
+		<h3 class="section-title mb-5">NEWSLETTER</h3>
+		<section id="newsletter-form">
+	<div class="d-flex justify-content-between justify-content-lg-start align-items-center">
+		<h2 class="mb-0">SIGN UP FOR THE <br class="d-block d-lg-none">DESTRUCTOID NEWSLETTER</h2>
+		<svg class="title-svg" width="40" height="50" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<rect width="10" height="10" fill="#E53239" />
+			<rect x="10" y="10" width="10" height="10" fill="#E53239" />
+			<rect x="10" y="40" width="10" height="10" fill="#E53239" />
+			<rect x="20" width="10" height="10" fill="#E53239" />
+			<rect y="30" width="10" height="10" fill="#E53239" />
+			<rect x="30" y="10" width="10" height="10" fill="#E53239" />
+			<rect x="20" y="20" width="10" height="10" fill="#E53239" />
+			<rect y="20" width="10" height="10" fill="#E53239" />
+		</svg>
+	</div>
+	<div class="content position-relative">
+		<svg class="position-absolute bg-svg" width="241" height="172" viewBox="0 0 241 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g opacity="0.05">
+				<rect x="43.8184" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="150.5" width="21.9091" height="21.5" fill="black" />
+			</g>
+		</svg>
+		<form action="#" class="position-relative">
+			<input type="email" name="email" id="email" placeholder="Enter your email" required>
+			<button type="submit">
+				<span class="d-none d-lg-block">SUBSCRIBE</span>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 10H19M19 10L10.5 1.5M19 10L10.5 18.5" stroke="var(--white5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</form>
+		<p class="consent-text text-center position-relative">By subscribing you agree to our <br class="d-block d-lg-none"><a href="/terms/">Terms of Service</a> and <a href="/privacy/">Privacy Policy</a>.</p>
+	</div>
+</section>	</div>
+</section>
+
+<section id="posts-all" class="my-5 py-5">
+	<div class="container">
+			<div id="single-posts-all" class="posts-full-width-container" data-ajax-pagination="true" data-template-args="eyJwYWdpbmF0aW9uIjp0cnVlLCJwYWdlZCI6MSwiYWpheF9pZCI6InNpbmdsZS1wb3N0cy1hbGwiLCJwYWdpbmF0aW9uX2Jhc2UiOiJodHRwczpcL1wvd3d3LmRlc3RydWN0b2lkLmNvbVwvc3Vydml2ZS15b3VyLWlkZWFzLWNvZGVzXC9wYWdlXC8lIyVcLyJ9">
+		<div class="posts-full-width row">
+							<div class="col-12">
+					<a href="https://www.destructoid.com/how-to-get-the-clockwork-smg-in-the-division-2-echoes-of-central-park/">
+						<article class="article-card d-flex gap-3 gap-lg-4 position-relative align-items-start justify-content-start">
+							<h4 class="time-tag m-0 py-1 py-lg-2 px-2 px-lg-3">
+								4 hours ago							</h4>
+							<div class="image-container position-relative">
+								<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?fit=460%2C259" class="img-fluid featured-image wp-post-image" alt="Players exploring Central Park in The Division 2" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_cb81eecf5721f9453e4e597bc9d5380e1b4d0dda.1920x1080-e1793831649858.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />							</div>
+							<div class="w-100 d-lg-flex flex-column justify-content-between">
+								<h3 class="mb-3 position-relative">How to get the Clockwork SMG in The Division 2: Echoes of Central Park</h3>									<section id="author-comments-likes">
+		<p class="author mb-0">Arka Sarkar</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1287033" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1287033">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1287033">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="1287033" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1287033" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+								</div>
+						</article>
+					</a>
+											<div class="divider"></div>
+										</div>
+								<div class="col-12">
+					<a href="https://www.destructoid.com/all-nba-2k27-2ktv-answers-season-13/">
+						<article class="article-card d-flex gap-3 gap-lg-4 position-relative align-items-start justify-content-start">
+							<h4 class="time-tag m-0 py-1 py-lg-2 px-2 px-lg-3">
+								5 hours ago							</h4>
+							<div class="image-container position-relative">
+								<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?fit=460%2C259" class="img-fluid featured-image wp-post-image" alt="Shaqille O&#039;Neal in NBA 2K27" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/08/WhatsApp-Image-2026-08-27-at-12.32.56-AM-e1791615330400.jpeg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />							</div>
+							<div class="w-100 d-lg-flex flex-column justify-content-between">
+								<h3 class="mb-3 position-relative">All NBA 2K27 2KTV answers: Episode 1-9</h3>									<section id="author-comments-likes">
+		<p class="author mb-0">Arka Sarkar</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1258324" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1258324">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1258324">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="1258324" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1258324" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+								</div>
+						</article>
+					</a>
+											<div class="divider"></div>
+										</div>
+								<div class="col-12">
+					<a href="https://www.destructoid.com/how-to-get-the-piercing-gaze-hunter-mask-in-the-division-2-echoes-of-central-park/">
+						<article class="article-card d-flex gap-3 gap-lg-4 position-relative align-items-start justify-content-start">
+							<h4 class="time-tag m-0 py-1 py-lg-2 px-2 px-lg-3">
+								10 hours ago							</h4>
+							<div class="image-container position-relative">
+								<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?fit=460%2C259" class="img-fluid featured-image wp-post-image" alt="Players shooting at the statue" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/11/ss_32a596b32d07ff18bb9c2c0208e1dccb542a0da8.1920x1080-e1793831129913.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />							</div>
+							<div class="w-100 d-lg-flex flex-column justify-content-between">
+								<h3 class="mb-3 position-relative">How to get the Piercing Gaze Hunter Mask in The Division 2: Echoes of Central Park</h3>									<section id="author-comments-likes">
+		<p class="author mb-0">Arka Sarkar</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1287018" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1287018">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1287018">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-off-light.png" width="24" height="24" alt="Likes" data-post-id="1287018" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1287018" data-siteid="">0</span></div>
+		</div>
+		</div>
+	</section>
+								</div>
+						</article>
+					</a>
+											<div class="divider"></div>
+										</div>
+								<div class="col-12">
+					<a href="https://www.destructoid.com/all-pirate-chest-loot-and-rewards-in-fortnite-treasure-hunters/">
+						<article class="article-card d-flex gap-3 gap-lg-4 position-relative align-items-start justify-content-start">
+							<h4 class="time-tag m-0 py-1 py-lg-2 px-2 px-lg-3">
+								12 hours ago							</h4>
+							<div class="image-container position-relative">
+								<img width="460" height="259" src="https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?fit=460%2C259" class="img-fluid featured-image wp-post-image" alt="" decoding="async" loading="lazy" srcset="https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?w=1280 1280w, https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?w=300 300w, https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?w=768 768w, https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?w=1024 1024w, https://www.destructoid.com/wp-content/uploads/2026/10/fortnite-treasure-chest.jpg?w=460 460w" sizes="auto, (max-width: 460px) 100vw, 460px" />							</div>
+							<div class="w-100 d-lg-flex flex-column justify-content-between">
+								<h3 class="mb-3 position-relative">All Pirate Chest loot and rewards in Fortnite Treasure Hunters</h3>									<section id="author-comments-likes">
+		<p class="author mb-0">Arka Sarkar</p>
+		<div class="d-flex justify-content-start align-items-center gap-3">
+		<div id="comments-counter" class="d-flex justify-content-start align-items-center gap-1">
+			<img class="comments-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/comments-off-light.png" width="24" height="24" alt="Comments" data-post-id="1283979" loading="lazy" decoding="async">
+			<div class="number disqus-comment-count" data-disqus-identifier="dtoidwp_1283979">0</div>
+		</div>
+		<div id="likes-counter" class="d-flex justify-content-start align-items-center gap-1" data-post-id="1283979">
+						<img class="likes-icon" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/icons/likes-on.png" width="24" height="24" alt="Likes" data-post-id="1283979" loading="lazy" decoding="async">
+			<div class="number"><span data-favorites-post-count-id="1283979" data-siteid="">3</span></div>
+		</div>
+		</div>
+	</section>
+								</div>
+						</article>
+					</a>
+									</div>
+						</div>
+					<div class="pagination-wrapper d-flex justify-content-center align-items-center gap-2 mt-5">
+				<span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="https://www.destructoid.com/survive-your-ideas-codes/page/2/">2</a>
+<span class="page-numbers dots">&hellip;</span>
+<a class="page-numbers" href="https://www.destructoid.com/survive-your-ideas-codes/page/41266/">41,266</a>
+<a class="next page-numbers" href="https://www.destructoid.com/survive-your-ideas-codes/page/2/"><svg width="13" height="21" viewBox="0 0 13 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.00002 10.9297L0.333354 3.26302L2.66669 0.929687L12.6667 10.9297L2.66669 20.9297L0.333353 18.5964L8.00002 10.9297Z" fill="var(--text1)"/></svg></a>			</div>
+			</div>
+		</div>
+</section>
+
+<footer class="overflow-hidden pt-5">
+	<div class="container">
+		<div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center text-center text-lg-start">
+			<div>
+				<img loading="lazy" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/img/destructoid-logo-header.webp" alt="Destructoid" width="261" height="24" />
+				<h2 class="mt-2 mb-3 mb-lg-0">Gamers live here.</h2>
+			</div>
+			<section id="social-links" class="d-flex justify-content-start align-items-center gap-3">
+	<a href="https://www.facebook.com/Destructoid/" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12.5 1H9.5C8.1739 1 6.9021 1.52678 5.9645 2.46447C5.02678 3.40215 4.5 4.67392 4.5 6V9H1.5V13H4.5V21H8.5V13H11.5L12.5 9H8.5V6C8.5 5.73478 8.6054 5.48043 8.7929 5.29289C8.9804 5.10536 9.2348 5 9.5 5H12.5V1Z" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+	<a href="https://www.instagram.com/destructoid_official" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			<path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="var(--text1)" stroke-width="1.5" />
+			<path d="M17.5 6.50916L17.51 6.49805" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+		</svg>
+	</a>
+	<a href="https://www.youtube.com/@DTOID" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M14 12L10.5 14V10L14 12Z" fill="var(--text1)" stroke="var(--text1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+			<path d="M2 12.706V11.2909C2 8.39559 2 6.94793 2.90549 6.01646C3.81099 5.08499 5.23656 5.04467 8.08769 4.96403C9.43873 4.92582 10.8188 4.89844 12 4.89844C13.1812 4.89844 14.5613 4.92582 15.9123 4.96403C18.7634 5.04467 20.189 5.08499 21.0945 6.01646C22 6.94793 22 8.39559 22 11.2909V12.706C22 15.6013 22 17.049 21.0945 17.9804C20.189 18.9119 18.7635 18.9522 15.9124 19.0329C14.5613 19.0711 13.1812 19.0985 12 19.0985C10.8188 19.0985 9.43867 19.0711 8.0876 19.0329C5.23651 18.9522 3.81097 18.9119 2.90548 17.9804C2 17.049 2 15.6013 2 12.706Z" stroke="var(--text1)" stroke-width="1.5" />
+		</svg>
+	</a>
+	<a href="https://twitter.com/destructoid" rel="noreferrer" target="_blank" class="d-flex justify-content-center align-items-center">
+		<svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M16.8196 21.0262L3.75299 4.22617C3.44646 3.83206 3.72731 3.25781 4.2266 3.25781H6.70637C6.89152 3.25781 7.06631 3.34329 7.17998 3.48945L20.2466 20.2894C20.5532 20.6836 20.2723 21.2578 19.773 21.2578H17.2933C17.1081 21.2578 16.9333 21.1723 16.8196 21.0262Z" stroke-width="1.5" stroke="var(--text1)" />
+			<path d="M20 3.25781L4 21.2578" stroke-width="1.5" stroke-linecap="round" stroke="var(--text1)" />
+		</svg>
+	</a>
+</section>		</div>
+		<div class="divider-dark my-5 my-lg-4"></div>
+		<div class="legal-and-info-links text-center text-lg-start d-flex flex-column flex-lg-row justify-content-start align-items-center mb-lg-4">
+			<a href="/about-us/" class="mb-3 mb-lg-0 me-lg-3">About Us</a>
+			<a href="/ethics/" class="mb-3 mb-lg-0 me-lg-3">Ethics</a>
+			<a href="/contact-us/" class="mb-3 mb-lg-0 me-lg-3">Contact Us</a>
+			<a href="/privacy/" class="mb-3 mb-lg-0 me-lg-3">Privacy Policy</a>
+			<a href="/terms/" class="mb-3 mb-lg-0 me-lg-3">Terms of Service</a>
+			<div id="privacy-link" class="mb-5 mb-lg-0"></div>
+		</div>
+		<div class="our-network text-center text-lg-start mb-5 mb-lg-4">
+			<h3 class="mb-3">Our Network</h3>
+			<div class="d-flex flex-wrap justify-content-center justify-content-lg-start">
+				<a href="https://progameguides.com/" target="_blank" rel="noopener" class="mb-2 me-3">Pro Game Guides</a>
+				<a href="https://twinfinite.net/" target="_blank" rel="noopener" class="mb-2 me-3">Twinfinite</a>
+				<a href="https://www.gamepur.com/" target="_blank" rel="noopener" class="mb-2 me-3">Gamepur</a>
+				<a href="https://attackofthefanboy.com/" target="_blank" rel="noopener" class="mb-2 me-3">Attack Of The Fanboy</a>
+				<a href="https://primagames.com/" target="_blank" rel="noopener" class="mb-2 me-3">Prima Games</a>
+				<a href="https://www.siliconera.com/" target="_blank" rel="noopener" class="mb-2 me-3">Siliconera</a>
+				<a href="https://wegotthiscovered.com/" target="_blank" rel="noopener" class="mb-2 me-3">We Got This Covered</a>
+				<a href="https://gamerjournalist.com/" target="_blank" rel="noopener" class="mb-2 me-3">Gamer Journalist</a>
+				<a href="https://www.gameskinny.com/" target="_blank" rel="noopener" class="mb-2 me-3">GameSkinny</a>
+				<a href="https://www.operationsports.com/" target="_blank" rel="noopener" class="mb-2 me-3">Operation Sports</a>
+				<a href="https://www.themarysue.com/" target="_blank" rel="noopener" class="mb-2 me-3">The Mary Sue</a>
+				<a href="https://www.touchtapplay.com/" target="_blank" rel="noopener" class="mb-2 me-3">Touch, Tap, Play</a>
+				<a href="https://fruityblox.com/" target="_blank" rel="noopener" class="mb-2 me-3">FruityBlox</a>
+				<a href="https://bloxinformer.com/" target="_blank" rel="noopener" class="mb-2 me-3">Bloxinformer</a>
+				<a href="https://gta6bible.com/" target="_blank" rel="noopener" class="mb-2 me-3">GTA6Bible</a>
+			</div>
+		</div>
+		<section id="newsletter-form">
+	<div class="d-flex justify-content-between justify-content-lg-start align-items-center">
+		<h2 class="mb-0">SIGN UP FOR THE <br class="d-block d-lg-none">DESTRUCTOID NEWSLETTER</h2>
+		<svg class="title-svg" width="40" height="50" viewBox="0 0 40 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<rect width="10" height="10" fill="#E53239" />
+			<rect x="10" y="10" width="10" height="10" fill="#E53239" />
+			<rect x="10" y="40" width="10" height="10" fill="#E53239" />
+			<rect x="20" width="10" height="10" fill="#E53239" />
+			<rect y="30" width="10" height="10" fill="#E53239" />
+			<rect x="30" y="10" width="10" height="10" fill="#E53239" />
+			<rect x="20" y="20" width="10" height="10" fill="#E53239" />
+			<rect y="20" width="10" height="10" fill="#E53239" />
+		</svg>
+	</div>
+	<div class="content position-relative">
+		<svg class="position-absolute bg-svg" width="241" height="172" viewBox="0 0 241 172" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<g opacity="0.05">
+				<rect x="43.8184" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="21.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="43" width="21.9091" height="21.5" fill="black" />
+				<rect y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="64.5" width="21.9091" height="21.5" fill="black" />
+				<rect y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="86" width="21.9091" height="21.5" fill="black" />
+				<rect y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="107.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="21.9092" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="65.7275" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="129" width="21.9091" height="21.5" fill="black" />
+				<rect y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="43.8184" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="87.6367" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="109.546" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="131.454" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="153.363" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="175.272" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="197.182" y="150.5" width="21.9091" height="21.5" fill="black" />
+				<rect x="219.091" y="150.5" width="21.9091" height="21.5" fill="black" />
+			</g>
+		</svg>
+		<form action="#" class="position-relative">
+			<input type="email" name="email" id="email" placeholder="Enter your email" required>
+			<button type="submit">
+				<span class="d-none d-lg-block">SUBSCRIBE</span>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M1 10H19M19 10L10.5 1.5M19 10L10.5 18.5" stroke="var(--white5)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</form>
+		<p class="consent-text text-center position-relative">By subscribing you agree to our <br class="d-block d-lg-none"><a href="/terms/">Terms of Service</a> and <a href="/privacy/">Privacy Policy</a>.</p>
+	</div>
+</section>		<div class="divider-dark mt-5 my-lg-4"></div>
+		<div class="d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center text-center text-lg-start copyright-info my-4">
+			<div>2025, Destructoid</div>
+			<div>Powered by <a href="https://gamurs.group/" target="_blank" rel="noopener noreferrer"><b>GAMURS Group</b></a></div>
+		</div>
+	</div>
+</footer>
+
+<!-- Comscore noscript begin -->
+<noscript>
+	<img src="https://sb.scorecardresearch.com/p?c1=2&amp;c2=36750692&amp;cv=3.6.0&amp;cj=1">
+</noscript>
+<!-- Comscore noscript end -->
+
+	<script id="gamurs-stn-float-offset">
+	// STN's mobile sticky player docks at the top of the viewport and covers the
+	// site header. Its float container reads --stn-player-floatMarginY, so keep
+	// that at the bottom edge of whatever is fixed to the top (the header shows /
+	// hides on scroll). The same variable also drives the desktop bottom-anchored
+	// float, so only set it where STN uses its mobile layout (UA-based, like STN).
+	(function () {
+		if ( ! /Mobi|Android|iPhone|iPod/i.test( navigator.userAgent ) ) {
+			return;
+		}
+		var root = document.documentElement, raf = 0, timer = 0;
+		function update() {
+			raf = 0;
+			var bottom = 0;
+			document.querySelectorAll( '#top-bar-nav, #pushdown-m' ).forEach( function ( el ) {
+				var r = el.getBoundingClientRect();
+				if ( r.height && r.top < 1 ) {
+					bottom = Math.max( bottom, r.bottom );
+				}
+			} );
+			root.style.setProperty( '--stn-player-floatMarginY', Math.max( 0, Math.round( bottom ) ) + 'px' );
+		}
+		function schedule() {
+			if ( ! raf ) {
+				raf = requestAnimationFrame( update );
+			}
+			// Re-measure once header show/hide transitions settle.
+			clearTimeout( timer );
+			timer = setTimeout( update, 400 );
+		}
+		addEventListener( 'scroll', schedule, { passive: true } );
+		addEventListener( 'resize', schedule );
+		schedule();
+	})();
+	</script>
+	<script id="gamurs-stn-ad-impression">
+	// Send each STN video ad impression to Snowplow (replaces the old Connatix
+	// ImpressionRevenue tracking). Players are hooked as they load, so later
+	// players (e.g. infinite scroll) are covered too.
+	(function () {
+		var hooked = [];
+		function num( v ) {
+			return typeof v === 'number' && isFinite( v ) && v >= 0 ? v : null;
+		}
+		function str( v, max ) {
+			return v === null || v === undefined || v === '' ? null : String( v ).slice( 0, max );
+		}
+		function hook( player ) {
+			if ( ! player || typeof player.on !== 'function' || hooked.indexOf( player ) !== -1 ) {
+				return;
+			}
+			hooked.push( player );
+			player.on( 'adImpression', function ( e ) {
+				if ( typeof window.snowplow !== 'function' ) {
+					return;
+				}
+				var ad = ( e && e.ad ) || {};
+				var ids = ( ad.ad && ad.ad.data ) || {};
+				window.snowplow( 'trackSelfDescribingEvent', {
+					event: {
+						schema: 'iglu:group.gamurs/stn_ad_impression/jsonschema/1-0-0',
+						data: {
+							playerId: str( e && e.playerID, 64 ),
+							netCpm: num( ad.netCpm ),
+							bidCpm: num( ad.bidCpm ),
+							grossCpm: num( ad.grossCpm ),
+							demandOwner: str( ad.demandOwner, 255 ),
+							network: str( ad.network, 100 ),
+							adDealType: str( ad.adDealType, 100 ),
+							isPublisher: typeof ad.isPublisher === 'boolean' ? ad.isPublisher : null,
+							lineItemId: str( ad.lineItemId, 100 ),
+							adId: str( ids.adId, 100 ),
+							creativeId: str( ids.creativeId, 100 )
+						}
+					}
+				} );
+			} );
+		}
+		function hookAll() {
+			var v = window.voltax;
+			( v && typeof v.getAllPlayersOnPage === 'function' ? v.getAllPlayersOnPage() : [] ).forEach( hook );
+		}
+		addEventListener( 'voltaxPlayerLoaded', function ( e ) {
+			hook( e.detail && e.detail.player );
+			hookAll();
+		} );
+		hookAll();
+	})();
+	</script>
+	<script id="dsq-count-scr" src="//destructoid.disqus.com/count.js" async></script><script id="hurryt-cookie-js" src="https://www.destructoid.com/wp-content/plugins/hurrytimer/assets/js/cookie.min.js?ver=3.14.1"></script>
+<script id="hurryt-countdown-js" src="https://www.destructoid.com/wp-content/plugins/hurrytimer/assets/js/jquery.countdown.min.js?ver=2.2.0"></script>
+<script id="hurrytimer-js-extra">
+var hurrytimer_ajax_object = {"ajax_url":"https://www.destructoid.com/wp-admin/admin-ajax.php","ajax_nonce":"ba4d255d47","disable_actions":"","methods":{"COOKIE":1,"IP":2,"USER_SESSION":3},"actionsOptions":{"none":1,"hide":2,"redirect":3,"stockStatus":4,"hideAddToCartButton":5,"displayMessage":6,"expire_coupon":7},"restartOptions":{"none":1,"immediately":2,"afterReload":3,"after_duration":4},"COOKIEPATH":"/","COOKIE_DOMAIN":"","redirect_no_back":"1","expire_coupon_message":"","invalid_checkout_coupon_message":""};
+//# sourceURL=hurrytimer-js-extra
+</script>
+<script id="hurrytimer-js" src="https://www.destructoid.com/wp-content/plugins/hurrytimer/assets/js/hurrytimer.js?ver=2.12.0"></script>
+<script id="destructoid-theme-switcher-js-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/theme-switcher.js?ver=2.1.15"></script>
+<script id="ajax-pagination-js-extra">
+var ajax_object = {"ajax_url":"https://www.destructoid.com/wp-admin/admin-ajax.php","nonce":"5abaec2e73"};
+//# sourceURL=ajax-pagination-js-extra
+</script>
+<script id="ajax-pagination-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/assets/js/ajax-pagination.js?ver=2.1.17"></script>
+<script id="jetpack-stats-js-before">
+_stq = window._stq || [];
+_stq.push([ "view", {"v":"ext","blog":"211000526","post":"1287087","tz":"-6","srv":"www.destructoid.com","hp":"vip","j":"1:16.3.1"} ]);
+_stq.push([ "clickTrackerInit", "211000526", "1287087" ]);
+//# sourceURL=jetpack-stats-js-before
+</script>
+<script data-wp-strategy="defer" defer fetchpriority="low" id="jetpack-stats-js" src="https://stats.wp.com/e-202645.js"></script>
+<script async id="pushly-sdk-js" src="https://cdn.p-n.io/pushly-sdk.min.js?domain_key=RzKZbOHB6lCjdvLsVlmt0WLrMNLrDEpH4OaP&#038;ver=7.1.4"></script>
+<script data-wp-strategy="defer" defer id="gamurs-pushly-banner-view-script-js" src="https://www.destructoid.com/wp-content/themes/destructoid2025/inc/blocks/pushly-banner/view.js?ver=d482833ee58bb62bbf95"></script>
+	<script id="gamurs-codes-hunter-banner-toggle">
+	(function () {
+		var EXTENSION_ID = 'mhjfpeagbchmdfmaedblmplkinnfhjce';
+		var EXTENSION_PING_TIMEOUT_MS = 300;
+		var SUPPRESSION_KEY = 'ch_banner_suppressed_until';
+		var SUPPRESSION_DAYS = 30;
+		var SNOWPLOW_CATEGORY = 'Destructoid Roblox Codes Banner';
+		var EXTENSION_VARIANTS = ['extension-social-proof', 'extension-demo-static'];
+
+		function suppressionActive() {
+			var raw = window.localStorage.getItem(SUPPRESSION_KEY);
+			if (!raw) return false;
+			var until = parseInt(raw, 10);
+			return !isNaN(until) && Date.now() < until;
+		}
+
+		function setSuppression() {
+			var until = Date.now() + SUPPRESSION_DAYS * 24 * 60 * 60 * 1000;
+			window.localStorage.setItem(SUPPRESSION_KEY, String(until));
+		}
+
+		// Resolves true/false; never rejects. False on timeout, missing API,
+		// or the extension simply not responding (Chrome doesn't reject/
+		// timeout sendMessage on its own when the target isn't installed).
+		function pingExtension() {
+			return new Promise(function (resolve) {
+				if (typeof chrome === 'undefined' || !chrome.runtime || !chrome.runtime.sendMessage) {
+					resolve(false);
+					return;
+				}
+				var settled = false;
+				var timer = setTimeout(function () {
+					if (!settled) { settled = true; resolve(false); }
+				}, EXTENSION_PING_TIMEOUT_MS);
+				try {
+					chrome.runtime.sendMessage(EXTENSION_ID, { type: 'ping' }, function (response) {
+						if (settled) return;
+						settled = true;
+						clearTimeout(timer);
+						resolve(!!(response && response.installed));
+					});
+				} catch (e) {
+					if (!settled) { settled = true; clearTimeout(timer); resolve(false); }
+				}
+			});
+		}
+
+		// navigator.brave.isBrave() is intentionally async and can't be
+		// detected synchronously via UA (Brave's UA is byte-identical to
+		// Chrome's by design).
+		function detectBrave() {
+			if (typeof navigator === 'undefined' || !navigator.brave || typeof navigator.brave.isBrave !== 'function') {
+				return Promise.resolve(false);
+			}
+			return navigator.brave.isBrave().then(function (result) { return !!result; }).catch(function () { return false; });
+		}
+
+		function detectBrowser() {
+			if (navigator.userAgentData && Array.isArray(navigator.userAgentData.brands)) {
+				var brands = navigator.userAgentData.brands.map(function (b) { return b.brand; });
+				var isChromeBrand = brands.indexOf('Google Chrome') !== -1;
+				var isOtherChromiumBrand = brands.indexOf('Microsoft Edge') !== -1 || brands.indexOf('Opera') !== -1;
+				return (isChromeBrand && !isOtherChromiumBrand) ? 'chrome' : 'other';
+			}
+			var ua = navigator.userAgent || '';
+			var isChromiumUa = typeof window.chrome !== 'undefined' && /Chrome\//.test(ua);
+			var isOtherChromiumUa = /Edg\/|OPR\/|SamsungBrowser\//.test(ua);
+			var isChromeVendor = navigator.vendor === 'Google Inc.';
+			return (isChromiumUa && !isOtherChromiumUa && isChromeVendor) ? 'chrome' : 'other';
+		}
+
+		// QA preview (?ch_preview=): every variant is shown, so no tracking,
+		// no routing and no real newsletter signups.
+		var PREVIEW = !!document.querySelector('.ch-toggle[data-preview]');
+
+		function trackStructEvent(action, label, property) {
+			if (PREVIEW || !window.snowplow) return;
+			window.snowplow('trackStructEvent', {
+				category: SNOWPLOW_CATEGORY,
+				action: action,
+				label: label,
+				property: property
+			});
+		}
+
+		function showVariant(root, variant) {
+			Array.prototype.forEach.call(root.children, function (child) {
+				if (!child.classList.contains('wp-block-gamurs-ab-testing__custom')) return;
+				child.style.display = (child.dataset.keyValue === variant) ? 'block' : 'none';
+			});
+			// applyRouting() re-runs on every 'growthbookdata' event (e.g. a
+			// later remote-eval refresh), which would otherwise re-track
+			// 'Rendered' every time even though the visible variant hasn't
+			// changed. Track once per root per pageview, and again only if
+			// the resolved variant actually changes.
+			if (root.dataset.renderedVariant === variant) return;
+			root.dataset.renderedVariant = variant;
+			trackStructEvent('Rendered', variant, null);
+		}
+
+		function onCtaClick(e) {
+			var ctaLink = e.target.closest('.ch-unit:not(.ch-unit--news) .ch-btn');
+			if (ctaLink) {
+				var wrap = ctaLink.closest('.wp-block-gamurs-ab-testing__custom');
+				trackStructEvent('Clicked', wrap ? wrap.dataset.keyValue : 'unknown', 'cta');
+				return;
+			}
+			var dismissBtn = e.target.closest('.ch-x');
+			if (dismissBtn) {
+				var dismissWrap = dismissBtn.closest('.wp-block-gamurs-ab-testing__custom');
+				if (dismissWrap) {
+					trackStructEvent('Clicked', dismissWrap.dataset.keyValue || 'unknown', 'dismiss');
+					dismissWrap.style.display = 'none';
+				}
+			}
+		}
+		document.addEventListener('click', onCtaClick);
+
+		// Reads feature values and applies the result to the DOM. Read-only —
+		// never touches gb attributes — so it's safe to re-run on every
+		// 'growthbookdata' event (matches the read-only re-apply pattern used
+		// by gamurs/ab-testing's view.js). browser/hasExtension/isBrave are
+		// resolved once by route() and closed over here, not re-detected.
+		function applyRouting(roots, browser, isBrave, hasExtension) {
+			window.growthbook_queue = window.growthbook_queue || [];
+			window.growthbook_queue.push(function (gb) {
+				var featureList = Object.keys(gb.getFeatures());
+				var useExtension = browser === 'chrome' && !isBrave;
+				var featureKey = useExtension
+					? roots[0].dataset.extensionKey
+					: roots[0].dataset.newsletterKey;
+
+				if (featureList.indexOf(featureKey) === -1) {
+					Array.prototype.forEach.call(roots, function (root) { root.style.display = 'none'; });
+					return;
+				}
+
+				var variant = gb.getFeatureValue(featureKey, 'control');
+				var isValid = useExtension
+					? EXTENSION_VARIANTS.indexOf(variant) !== -1
+					: variant === 'newsletter';
+
+				if (!isValid) {
+					Array.prototype.forEach.call(roots, function (root) { root.style.display = 'none'; });
+					return;
+				}
+
+				if (hasExtension && variant === 'newsletter') {
+					setSuppression();
+					Array.prototype.forEach.call(roots, function (root) { root.style.display = 'none'; });
+					return;
+				}
+
+				Array.prototype.forEach.call(roots, function (root) { showVariant(root, variant); });
+			});
+		}
+
+		// Runs once per page load: pings the extension, detects Brave/browser,
+		// sets gb attributes ONCE (matches PGG's setupStaticUnit — calling
+		// setAttributes from inside a 'growthbookdata' listener would risk a
+		// setAttributes-triggers-growthbookdata-triggers-setAttributes loop),
+		// then applies routing and re-listens for 'growthbookdata' to re-apply
+		// (read-only) if features refresh later.
+		function route() {
+			var roots = document.getElementsByClassName('ch-toggle');
+			if (!roots.length) return;
+
+			if (PREVIEW) {
+				Array.prototype.forEach.call(roots, function (root) {
+					Array.prototype.forEach.call(root.children, function (child) {
+						child.style.display = 'block';
+					});
+				});
+				return;
+			}
+
+			if (suppressionActive()) {
+				Array.prototype.forEach.call(roots, function (root) { root.style.display = 'none'; });
+				return;
+			}
+
+			Promise.all([pingExtension(), detectBrave()]).then(function (results) {
+				var hasExtension = results[0];
+				var isBrave = results[1];
+				var browser = detectBrowser();
+
+				window.growthbook_queue = window.growthbook_queue || [];
+				window.growthbook_queue.push(function (gb) {
+					gb.setAttributes(Object.assign({}, gb.getAttributes(), { hasExtension: hasExtension, isBrave: isBrave, browser: browser }));
+				});
+
+				applyRouting(roots, browser, isBrave, hasExtension);
+				document.addEventListener('growthbookdata', function () {
+					applyRouting(roots, browser, isBrave, hasExtension);
+				});
+			});
+		}
+
+		route();
+
+		document.addEventListener('submit', function (e) {
+			var form = e.target.closest('.ch-form');
+			if (!form) return;
+			e.preventDefault();
+			if (PREVIEW) return;
+			onNewsletterFormSubmit(form);
+		});
+		document.addEventListener('input', function (e) {
+			var input = e.target.closest('.ch-form input[type=email]');
+			if (input) input.closest('.ch-form').classList.remove('has-error');
+		});
+
+		function setFormError(form, message) {
+			var errorEl = form.parentNode.querySelector('.ch-error');
+			if (errorEl) errorEl.textContent = message;
+			form.classList.add('has-error');
+		}
+
+		function onNewsletterFormSubmit(form) {
+			var input = form.querySelector('input[type=email]');
+			var email = (input.value || '').trim();
+
+			if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+				setFormError(form, 'Please enter a valid email address.');
+				input.focus();
+				return;
+			}
+
+			form.classList.remove('has-error');
+			trackStructEvent('Clicked', 'newsletter', 'subscribe');
+
+			fetch('/wp-json/gamurs-codes-hunter/v1/subscribe-newsletter', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ email: email })
+			})
+				.then(function (response) { return response.json(); })
+				.then(function (data) {
+					var success = !!(data && data.success);
+					trackStructEvent('Subscribe Result', success ? 'true' : 'false');
+					if (success) {
+						var unitEl = form.closest('.ch-unit');
+						if (unitEl) unitEl.classList.add('is-done');
+					} else {
+						setFormError(form, 'Something went wrong — please try again.');
+					}
+				})
+				.catch(function () {
+					trackStructEvent('Subscribe Result', 'false');
+					setFormError(form, 'Something went wrong — please try again.');
+				});
+		}
+	})();
+	</script>
+	
+<script>window.__CF$cv$params={r:'a571d19b0ae809f0',t:'MTc5NDExMTk3OA==',u:'01a1b9683ce97686912b0a49d03c908e',ut:'OhyFZ8_p0iSgHhmtxjVcLRba8K4cs85.kkKLS1y0lNA-1794111978-1.2.1.1-2AS7LisfIJDWxoJ0IggUSQd3ZR.uiZo4WzVGV1mu9KELSPlwiAovZwgd1vjSlfeE7GP8zMR7KNA.Qh_w7vy8vNFCT8.aHuu8XdeNLw5eP70',i:60};(function(){if(!document.body)return;var l=window.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/precursor/main.js?ray=a571d19b0ae809f0',s=document.createElement('script');s.src=o?new URL(u,o).href:u;document.head.appendChild(s);})();</script></body>
+
+</html>

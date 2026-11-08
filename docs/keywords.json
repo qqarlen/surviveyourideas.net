@@ -1,0 +1,110 @@
+{
+  "site": "surviveyourideas.net",
+  "game": "Survive Your Ideas (Roblox, placeId 77900175935766, universeId 10769671316)",
+  "created": "2026-11-08",
+  "method": "2.1 Trends 先行 (related_queries 1-m + now 7-d) + 2.4 竞品子页对标 (surviveyourideas.wiki 13页 sitemap + SERP 实查)",
+  "categories": {
+    "brand_core": [
+      "survive your ideas",
+      "survive your ideas roblox",
+      "survive your ideas game",
+      "what is survive your ideas"
+    ],
+    "codes": [
+      "survive your ideas codes",
+      "survive your ideas code",
+      "survive your ideas roblox codes",
+      "codes for survive your ideas",
+      "survive your ideas codes november 2026",
+      "survive your ideas lucky spins free"
+    ],
+    "words": [
+      "survive your ideas words",
+      "survive your ideas word list",
+      "survive your ideas all words",
+      "survive your ideas word diary",
+      "survive your ideas word mastery",
+      "survive your ideas index"
+    ],
+    "best_words": [
+      "survive your ideas best words",
+      "best words to type in survive your ideas",
+      "funny words survive your ideas",
+      "survive your ideas word tier list"
+    ],
+    "meta_words": [
+      "survive your ideas meta words",
+      "survive your ideas slash commands",
+      "survive your ideas /jackpot price",
+      "survive your ideas admin word"
+    ],
+    "items_spins": [
+      "survive your ideas items",
+      "survive your ideas lucky spin",
+      "survive your ideas mythical items",
+      "survive your ideas grapple hook",
+      "survive your ideas force field"
+    ],
+    "badges_progress": [
+      "survive your ideas badges",
+      "survive your ideas collector badge",
+      "survive your ideas veteran badge"
+    ],
+    "howto_tips": [
+      "how to play survive your ideas",
+      "survive your ideas guide",
+      "survive your ideas tips",
+      "survive your ideas beginner guide",
+      "how to survive nuke in survive your ideas",
+      "how to survive tsunami in survive your ideas"
+    ],
+    "calculators": [
+      "survive your ideas cash calculator",
+      "survive your ideas meta words calculator",
+      "survive your ideas spin calculator"
+    ],
+    "community": [
+      "survive your ideas discord",
+      "survive your ideas update log",
+      "survive your ideas slayhatt"
+    ]
+  },
+  "keyword_page_map": {
+    "/": ["survive your ideas", "survive your ideas roblox", "survive your ideas game", "what is survive your ideas"],
+    "/codes": ["survive your ideas codes", "survive your ideas code", "survive your ideas roblox codes", "codes for survive your ideas", "survive your ideas codes november 2026", "survive your ideas lucky spins free"],
+    "/words": ["survive your ideas words", "survive your ideas word list", "survive your ideas all words", "survive your ideas index"],
+    "/words/nuke": ["survive your ideas nuke", "how to survive nuke in survive your ideas"],
+    "/words/tsunami": ["survive your ideas tsunami", "how to survive tsunami in survive your ideas"],
+    "/words/dinosaur": ["survive your ideas dinosaur"],
+    "/words/zombies": ["survive your ideas zombies"],
+    "/words/meteor": ["survive your ideas meteor"],
+    "/words/tacos": ["survive your ideas tacos"],
+    "/words/black-hole": ["survive your ideas black hole"],
+    "/best-words": ["survive your ideas best words", "best words to type in survive your ideas", "funny words survive your ideas", "survive your ideas word tier list"],
+    "/meta-words": ["survive your ideas meta words", "survive your ideas slash commands", "survive your ideas /jackpot price", "survive your ideas admin word"],
+    "/items": ["survive your ideas items", "survive your ideas lucky spin", "survive your ideas mythical items", "survive your ideas grapple hook", "survive your ideas force field"],
+    "/badges": ["survive your ideas badges", "survive your ideas collector badge", "survive your ideas veteran badge"],
+    "/how-to-play": ["how to play survive your ideas", "survive your ideas guide", "survive your ideas beginner guide"],
+    "/tips": ["survive your ideas tips"],
+    "/updates": ["survive your ideas update log", "survive your ideas word mastery"],
+    "/cash-planner": ["survive your ideas cash calculator", "survive your ideas meta words calculator"],
+    "/spin-planner": ["survive your ideas spin calculator", "survive your ideas lucky spin"],
+    "/discord": ["survive your ideas discord", "survive your ideas slayhatt"]
+  },
+  "sources": {
+    "trends_1m_rising": {
+      "survive your ideas roblox": "+3,768,400%",
+      "survive your ideas code": "+677,450%",
+      "survive your ideas best words": "+673,000%",
+      "survive your ideas roblox codes": "+537,600%",
+      "codes for survive your ideas": "+156,700%",
+      "survive your ideas words": "+350%"
+    },
+    "trends_7d": {
+      "survive your ideas codes": "TOP 100 + RISING +1,455,850%"
+    },
+    "competitor_sitemap": "surviveyourideas.wiki: /how-to-play /words /word-diary /badges /gamepasses /commands /tips /updates /community /faq /script-safety /about",
+    "checked_date": "2026-11-08"
+  },
+  "notes": "人工核对过分类 MECE；codes 为当前主导意图（7d 窗），best words 为真空机会词。words 全量目录无公开数据源（竞品 .wiki 明示不猜目录），只建已确认词的详情页，不造 150 假页。"
+}
