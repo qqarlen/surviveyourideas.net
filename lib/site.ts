@@ -7,7 +7,7 @@ export const SITE = {
     "Independent wiki for Survive Your Ideas on Roblox: working codes checked daily, the confirmed words list, best words to type, all 10 Meta Words with prices, items, badges and survival guides.",
   locale: "en_US",
   // GTM container or GA4 measurement id. "GTM-*" loads gtm.js, "G-*" loads gtag.js.
-  gaId: process.env.NEXT_PUBLIC_GA_ID ?? "",
+  gaId: process.env.NEXT_PUBLIC_GA_ID ?? "GTM-WJ4VJFH8",
   game: {
     name: "Survive Your Ideas",
     developer: "SlayHatt (Survive Your Ideas group)",
