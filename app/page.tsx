@@ -9,14 +9,14 @@ import { CASH_META_WORDS, ROBUX_META_WORDS, CASH_META_TOTAL } from "@/lib/meta-w
 export const metadata: Metadata = {
   title: `Survive Your Ideas Wiki — Codes, Words List, Best Words & Guides`,
   description:
-    "The independent Survive Your Ideas wiki: working codes checked daily (THANKYOU = 5 Lucky Spins), every confirmed word with counter-play, all 10 Meta Words priced, badges and beginner guides.",
+    "The independent Survive Your Ideas wiki: working codes checked daily (FIRSTUPDATE + THANKYOU), every confirmed word with counter-play, all 10 Meta Words priced, badges and beginner guides.",
   alternates: { canonical: "/" },
 };
 
 const faqs = [
   {
     q: "Are there any working Survive Your Ideas codes right now?",
-    a: "Yes. As of November 8, 2026 there is one active code: THANKYOU, which grants 5 Lucky Spins. It went live around November 7 and is confirmed by Destructoid, Dexerto and ProGamePilot independently. You redeem it through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
+    a: "Yes. As of November 9, 2026 there are two active codes: FIRSTUPDATE (free rewards, dropped with the game's first update on November 8) and THANKYOU (5 Lucky Spins, live since around November 7, confirmed by Destructoid, Dexerto and ProGameGuides). You redeem both through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
   },
   {
     q: "What is Survive Your Ideas on Roblox?",
@@ -163,8 +163,8 @@ export default function Home() {
           {
             href: "/codes",
             title: "Codes (Checked Daily)",
-            body: "THANKYOU is live right now for 5 Lucky Spins — and it is the only code the game has ever had. We watch the official group, the developer's channels and the big trackers daily, so the next drop lands here with its reward and date before the stale sites update.",
-            tag: "1 working code",
+            body: "FIRSTUPDATE and THANKYOU are both live right now — free rewards plus 5 Lucky Spins. We watch the official group, the developer's channels and the big trackers daily, so the next drop lands here with its reward and date before the stale sites update.",
+            tag: "2 working codes",
           },
           {
             href: "/words",

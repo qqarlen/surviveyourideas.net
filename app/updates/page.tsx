@@ -8,7 +8,7 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Update Log — Every Tracked Change (November 2026)",
   description:
-    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and THANKYOU, plus what each change means for this wiki's data.",
+    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and both codes (THANKYOU, FIRSTUPDATE), plus what each change means for this wiki's data.",
   alternates: { canonical: "/updates" },
 };
 
@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: "What did the early-November update add?",
-    a: "The headline additions per community tracking: 40+ new words for the word catalog and a 'Word Mastery' system (community-reported — no official patch notes page exists yet). The same wave introduced the Codes icon and spin economy to the game UI, followed by the first code (THANKYOU) around November 7. The game's chart climb from outside the top 100 to #3 happened in the same window.",
+    a: "The headline additions per community tracking: 40+ new words for the word catalog and a 'Word Mastery' system (community-reported — no official patch notes page exists yet). The same wave introduced the Codes icon and spin economy to the game UI, followed by the first code (THANKYOU) around November 7 and the second code (FIRSTUPDATE) with the November 8 patch. The game's chart climb from outside the top 100 to #3 happened in the same window.",
   },
   {
     q: "When did codes arrive in Survive Your Ideas?",
-    a: "The redemption system went live during the early-November wave — coverage from November 7 shows the Codes icon documented in-game with THANKYOU as the first code ever released. Before that, from launch on October 6, the game had no code system at all. Our codes page tracks every working code daily.",
+    a: "The redemption system went live during the early-November wave — coverage from November 7 shows the Codes icon documented in-game with THANKYOU as the first code ever released, and the November 8 patch added the second code (FIRSTUPDATE). Before that, from launch on October 6, the game had no code system at all. Our codes page tracks every working code daily.",
   },
   {
     q: "Where does this update log get its data?",
@@ -54,17 +54,17 @@ type UpdateEntry = {
 const UPDATES: UpdateEntry[] = [
   {
     date: "November 8, 2026",
-    title: "Live patch — game updated the morning of this log's check",
-    evidence: "api",
-    body: "The official Roblox API 'updated' field shows a fresh timestamp (2026-11-08T03:35Z) and the game page carries the [⭐UPD] tag. Specific patch contents have not been documented in official notes yet — no patch-notes channel has been verified so far. Concurrent player count held above 50K through the patch.",
+    title: "First update ships second code: FIRSTUPDATE",
+    evidence: "official",
+    body: "The November 8 patch ([⭐UPD] tag, API timestamp 2026-11-08T03:35Z) brought the game's second code: FIRSTUPDATE, granting free rewards. It was documented by Togame.io's codes tracker the same day, alongside the still-active THANKYOU. Concurrent player count held above 50K through the patch.",
     wikiImpact:
-      "Full re-verification pass: codes list, word entries and Meta Word prices all re-checked November 8. No data changes found beyond what's logged below.",
+      "Codes page updated to two working codes (FIRSTUPDATE + THANKYOU), with the highlight card and FAQ rewritten. Full re-verification pass on word entries and Meta Word prices — no other data changes.",
   },
   {
     date: "November 7, 2026",
     title: "First code ever: THANKYOU (5 Lucky Spins)",
     evidence: "official",
-    body: "The game's first code went live alongside its chart-topping week (the same window it climbed BloxControl's global ranks from #31 to #3). THANKYOU grants 5 Lucky Spins and is verified by three independent trackers (Destructoid, Dexerto, ProGamePilot). The redemption UI — Codes icon, upper-left corner — had arrived by this date per all three outlets' redemption steps.",
+    body: "The game's first code went live alongside its chart-topping week (the same window it climbed BloxControl's global ranks from #31 to #3). THANKYOU grants 5 Lucky Spins and is verified by three independent trackers (Destructoid, Dexerto, ProGameGuides). The redemption UI — Codes icon, upper-left corner — had arrived by this date per all three outlets' redemption steps.",
     wikiImpact:
       "Codes page launched as a live list rather than a watchtower. Spin Planner and items pages note the free-roll source.",
   },

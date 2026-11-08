@@ -12,13 +12,19 @@ export type CodeEntry = {
 
 export const CODES_STATE = {
   hasRedemptionSystem: true,
-  lastVerified: "November 8, 2026",
+  lastVerified: "November 9, 2026",
   working: [
+    {
+      code: "FIRSTUPDATE",
+      reward: "Free rewards (first update drop)",
+      added: "November 8, 2026",
+      source: "Togame.io (Nov 8) — arrived with the game's first patch",
+    },
     {
       code: "THANKYOU",
       reward: "5 Lucky Spins",
       added: "November 7, 2026",
-      source: "Destructoid, Dexerto, ProGamePilot (3-source cross-check)",
+      source: "Destructoid, Dexerto, ProGameGuides (3-source cross-check)",
     },
   ] as CodeEntry[],
   expired: [] as CodeEntry[],
