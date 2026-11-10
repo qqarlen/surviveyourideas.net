@@ -12,8 +12,20 @@ export type CodeEntry = {
 
 export const CODES_STATE = {
   hasRedemptionSystem: true,
-  lastVerified: "November 9, 2026",
+  lastVerified: "November 11, 2026",
   working: [
+    {
+      code: "BIG5",
+      reward: "5 Lucky Spins",
+      added: "November 10, 2026",
+      source: "GamesRadar (Nov 10) — newest drop",
+    },
+    {
+      code: "NEWMAPSCOMING",
+      reward: "30 Free Spins",
+      added: "November 10, 2026",
+      source: "PCGamesN, Dexerto, ProGameGuides (3-source cross-check) — shipped with the new-maps teaser update",
+    },
     {
       code: "FIRSTUPDATE",
       reward: "Free rewards (first update drop)",
@@ -31,7 +43,7 @@ export const CODES_STATE = {
   // Known fake codes circulating from low-quality sites — warn section.
   fakePatterns: [
     "Any WELCOME / RELEASE / SPINFREE code — none has ever existed for this game",
-    "Codes promising Cash or Robux — the redemption system only grants Lucky Spins so far",
+    "Codes promising Cash or Robux — the redemption system only grants spins so far",
   ],
 };
 

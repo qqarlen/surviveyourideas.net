@@ -9,16 +9,16 @@ import { SPIN_ECONOMY } from "@/lib/items";
 import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 
 export const metadata: Metadata = {
-  title: "Survive Your Ideas Codes (November 2026) — FIRSTUPDATE + THANKYOU, Checked Daily",
+  title: "Survive Your Ideas Codes (November 2026) — NEWMAPSCOMING, BIG5, FIRSTUPDATE + THANKYOU, Checked Daily",
   description:
-    "Working Survive Your Ideas codes as of November 9, 2026: FIRSTUPDATE (free rewards) and THANKYOU (5 Lucky Spins). Redemption steps, where new codes come from, and why some listed codes are fake — re-verified every day.",
+    "Working Survive Your Ideas codes as of November 11, 2026: NEWMAPSCOMING (30 Free Spins), BIG5 (5 Lucky Spins), FIRSTUPDATE (free rewards) and THANKYOU (5 Lucky Spins). Redemption steps, where new codes come from, and why some listed codes are fake — re-verified every day.",
   alternates: { canonical: "/codes" },
 };
 
 const faqs = [
   {
     q: "What are the working Survive Your Ideas codes as of November 2026?",
-    a: "There are two active codes as of November 9, 2026. FIRSTUPDATE dropped with the game's first update on November 8 and grants free rewards; THANKYOU went live around November 7 — the day the game hit #3 on third-party global charts — and grants 5 Lucky Spins, the premium roll type used for items. Both are confirmed by independent Roblox codes trackers, with THANKYOU cross-checked by Destructoid, Dexerto and ProGameGuides.",
+    a: "There are four active codes as of November 11, 2026. NEWMAPSCOMING dropped November 10 with the developer's new-maps teaser and grants 30 Free Spins; BIG5 landed the same day for 5 Lucky Spins; FIRSTUPDATE shipped with the game's first update on November 8 with free rewards; and THANKYOU (5 Lucky Spins) went live around November 7 during the game's chart-topping week. All four are confirmed by independent Roblox codes trackers, with the newest batch cross-checked by GamesRadar, PCGamesN, Dexerto and ProGameGuides.",
   },
   {
     q: "How do I redeem codes in Survive Your Ideas?",
@@ -38,7 +38,7 @@ const faqs = [
   },
   {
     q: "Are there any expired Survive Your Ideas codes?",
-    a: "Not yet. THANKYOU and FIRSTUPDATE are the only codes the game has ever released and both are still active as of November 9, 2026. Once codes start expiring — and they will, because that is how Roblox code cycles work — each one moves to our expired list with its retirement date, so you always know whether a code you missed is gone forever or just old.",
+    a: "Not yet. NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU are the only codes the game has ever released and all four are still active as of November 11, 2026. Once codes start expiring — and they will, because that is how Roblox code cycles work — each one moves to our expired list with its retirement date, so you always know whether a code you missed is gone forever or just old.",
   },
   {
     q: "Do codes work on mobile and console?",
@@ -62,14 +62,16 @@ export default function CodesPage() {
           <span className="text-2xl">🎉</span>
           <div>
             <h2 className="font-extrabold text-lg text-slate-900">
-              New code: FIRSTUPDATE is live
+              New codes: NEWMAPSCOMING + BIG5 are live
             </h2>
             <p className="text-slate-700 mt-1 leading-relaxed text-sm">
-              The game's <strong>second code</strong> shipped with its first
-              update on November 8, 2026, granting <strong>free rewards</strong>.
-              It joins <strong>THANKYOU</strong> (5 Lucky Spins, still active) —
-              and it confirms the pattern: this developer ships codes with
-              updates, not just milestones. Redeem both before the wave
+              Two <strong>fresh codes</strong> landed on November 10, 2026:{" "}
+              <strong>NEWMAPSCOMING</strong> grants a huge{" "}
+              <strong>30 Free Spins</strong> and doubles as the developer&apos;s
+              teaser for upcoming maps — new content is on the way.{" "}
+              <strong>BIG5</strong> adds <strong>5 Lucky Spins</strong>. They
+              join FIRSTUPDATE and THANKYOU, bringing the working list to{" "}
+              <strong>four codes</strong>. Redeem all of them before the wave
               rotates; early codes are rarely permanent.
             </p>
           </div>
@@ -105,10 +107,11 @@ export default function CodesPage() {
           Expired Codes
         </h2>
         <div className="rounded-xl border border-slate-200 bg-white p-5 text-slate-600">
-          None yet — both shipped codes (THANKYOU and FIRSTUPDATE) are still
-          active as of {CODES_STATE.lastVerified}. When they rotate out (or new
-          codes replace them), each retired code lands here with its expiry
-          date instead of silently vanishing from the list.
+          None yet — all four shipped codes (NEWMAPSCOMING, BIG5, FIRSTUPDATE
+          and THANKYOU) are still active as of {CODES_STATE.lastVerified}. When
+          they rotate out (or new codes replace them), each retired code lands
+          here with its expiry date instead of silently vanishing from the
+          list.
         </div>
       </section>
 
@@ -185,11 +188,11 @@ export default function CodesPage() {
           suspiciously round numbers (100K Cash, 2x Victory), codes named
           WELCOME / RELEASE / SPINFREE — none of which have ever existed
           here — and lists copied from other typing-survival games. As of{" "}
-          {CODES_STATE.lastVerified}, exactly two codes have ever shipped
-          (THANKYOU and FIRSTUPDATE). Any page listing five or six "active"
-          codes right now is listing fiction. We would rather run a two-line
-          honest list than a wall of garbage, and this page becomes the
-          fastest accurate list every time a new wave drops.
+          {CODES_STATE.lastVerified}, exactly four codes have ever shipped
+          (NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU). Any page listing
+          eight or ten "active" codes right now is listing fiction. We would
+          rather run an honest four-line list than a wall of garbage, and this
+          page becomes the fastest accurate list every time a new wave drops.
         </p>
 
         <h2>Codes History Timeline</h2>
@@ -202,12 +205,16 @@ export default function CodesPage() {
           7 during the game's chart-topping week. The second code
           (FIRSTUPDATE, free rewards) followed on November 8 with the game's
           first content update — two codes in three days is a fast rotation
-          for a game this young. That timeline matters for a practical
-          reason: early codes in Roblox games are almost always the start of
-          a rotation, not a one-off. When the next milestone hits — visit
-          counts, an update celebration, a seasonal event — expect a fresh
-          wave, and this page will have each code with its reward, source and
-          dates within a day.
+          for a game this young. The third wave arrived November 10:{" "}
+          <strong>NEWMAPSCOMING</strong> (30 Free Spins, the biggest single
+          drop so far) doubles as official confirmation that{" "}
+          <strong>new maps are in development</strong>, with{" "}
+          <strong>BIG5</strong> (5 Lucky Spins) alongside it. That pacing —
+          four codes in five days — tells you the developer is actively using
+          codes to fuel the game's growth phase. When the next milestone hits
+          (the new maps themselves, visit counts, a seasonal event), expect a
+          fresh wave, and this page will have each code with its reward,
+          source and dates within a day.
         </p>
       </section>
 

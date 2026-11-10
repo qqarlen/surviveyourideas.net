@@ -8,14 +8,14 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Update Log — Every Tracked Change (November 2026)",
   description:
-    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and both codes (THANKYOU, FIRSTUPDATE), plus what each change means for this wiki's data.",
+    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all four codes (NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), plus what each change means for this wiki's data.",
   alternates: { canonical: "/updates" },
 };
 
 const faqs = [
   {
     q: "How often does Survive Your Ideas update?",
-    a: "Very fast for a new game — the official Roblox API shows update timestamps in the game's 'updated' field, and the game was patched the same morning this log was last verified (November 8, 2026, with an [⭐UPD] tag visible on the game page). The first month already included the launch, a major early-November content wave, and the code system rollout.",
+    a: "Very fast for a new game — the official Roblox API shows update timestamps in the game's 'updated' field, and the game was patched the same morning this log was last verified (November 8, 2026, with an [⭐UPD] tag visible on the game page). The first month already included the launch, a major early-November content wave, the code system rollout, and a November 10 patch that shipped two more codes alongside the new-maps teaser.",
   },
   {
     q: "What did the early-November update add?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "When did codes arrive in Survive Your Ideas?",
-    a: "The redemption system went live during the early-November wave — coverage from November 7 shows the Codes icon documented in-game with THANKYOU as the first code ever released, and the November 8 patch added the second code (FIRSTUPDATE). Before that, from launch on October 6, the game had no code system at all. Our codes page tracks every working code daily.",
+    a: "The redemption system went live during the early-November wave — coverage from November 7 shows the Codes icon documented in-game with THANKYOU as the first code ever released, and the November 8 patch added the second code (FIRSTUPDATE). The November 10 patch shipped two more: NEWMAPSCOMING (30 Free Spins, teasing upcoming maps) and BIG5 (5 Lucky Spins), confirmed by GamesRadar, PCGamesN, Dexerto and ProGameGuides the same day. Before November 7, from launch on October 6, the game had no code system at all. Our codes page tracks every working code daily.",
   },
   {
     q: "Where does this update log get its data?",
@@ -52,6 +52,14 @@ type UpdateEntry = {
 };
 
 const UPDATES: UpdateEntry[] = [
+  {
+    date: "November 10, 2026",
+    title: "New-maps teaser ships codes three and four: NEWMAPSCOMING + BIG5",
+    evidence: "official",
+    body: "The November 10 patch doubled as the developer's new-content teaser: NEWMAPSCOMING grants 30 Free Spins — the biggest single drop so far — and its name confirms new maps are in development. BIG5 adds 5 Lucky Spins alongside it. Both were documented same-day by GamesRadar and PCGamesN, with Dexerto and ProGameGuides following within 24 hours. The code pacing (four codes in five days) signals the developer is actively using codes to fuel the growth phase.",
+    wikiImpact:
+      "Codes page updated to four working codes with a new highlight card, FAQ and timeline rewritten. Update log (this page) gained this entry. Full re-verification pass on codes sources — no other data changes.",
+  },
   {
     date: "November 8, 2026",
     title: "First update ships second code: FIRSTUPDATE",
