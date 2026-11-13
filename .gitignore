@@ -5,3 +5,6 @@ node_modules
 *.log
 .workbuddy/
 .env.indexnow.host
+
+# daily check state — runtime baseline, keep out of git to avoid alert replay on reset
+data/daily-check-state.json

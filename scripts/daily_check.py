@@ -26,6 +26,14 @@ TRACKER_URLS = [
     "https://www.dexerto.com/roblox/survive-your-ideas-codes-3425583/",
 ]
 
+# Cross-game noise that keeps landing in tracker pages (sidebar "related articles",
+# codes-hunter widget ads). Verified false positives, 2026-11-09..12 runs:
+#   ARES/IRON/VANGUARD — "ARES THE IRON VANGUARD" (unrelated mobile game) article title
+#   RAIDS — Noob Tower Defense code + game "RAIDS: Slay 1 Million Zombies"
+#   AOPG — "A One Piece Game" cross-promo link in article footers
+#   NEWMAPSCOMING handled separately (real code, now in site list)
+FALSE_POSITIVE_CODES = {"RAIDS", "ARES", "IRON", "VANGUARD", "AOPG"}
+
 def fetch(url, timeout=30):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
     return urllib.request.urlopen(req, timeout=timeout).read()
@@ -59,6 +67,10 @@ for url in TRACKER_URLS:
         # Uppercase code-like strings near "code" context; conservative pattern
         for m in re.findall(r"\b([A-Z][A-Z0-9]{3,15})\b", text):
             if m in {"CODES", "CODE", "ACTIVE", "EXPIRED", "REDEEM", "NEW", "ROBLOX", "LUCKY", "SPINS", "SPIN", "FREE", "GUIDE", "COPY"}:
+                continue
+            # Known false positives (cross-game pollution from sidebar articles /
+            # codes-hunter widget ads) — confirmed repeated misfires 2026-11-09..12.
+            if m in FALSE_POSITIVE_CODES:
                 continue
             ctx = text.find(m)
             window = text[max(0, ctx-120):ctx+120].lower()

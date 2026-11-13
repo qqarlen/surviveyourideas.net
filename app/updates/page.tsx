@@ -8,14 +8,14 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Update Log — Every Tracked Change (November 2026)",
   description:
-    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all four codes (NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), plus what each change means for this wiki's data.",
+    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all four codes (NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), the November 11-13 triple-patch streak with no new codes, plus what each change means for this wiki's data.",
   alternates: { canonical: "/updates" },
 };
 
 const faqs = [
   {
     q: "How often does Survive Your Ideas update?",
-    a: "Very fast for a new game — the official Roblox API shows update timestamps in the game's 'updated' field, and the game was patched the same morning this log was last verified (November 8, 2026, with an [⭐UPD] tag visible on the game page). The first month already included the launch, a major early-November content wave, the code system rollout, and a November 10 patch that shipped two more codes alongside the new-maps teaser.",
+    a: "Very fast for a new game — and accelerating. The official Roblox API 'updated' field logged patches on November 8, 10, 11, and twice on November 13 (00:54 and 05:06 UTC) — three patches inside the November 11-13 window alone. The first month already included the launch, a major early-November content wave, the code system rollout, and the code drops that followed each of the early patches. One nuance from the latest streak: updates no longer guarantee codes — the November 11-13 triple patch shipped none.",
   },
   {
     q: "What did the early-November update add?",
@@ -52,6 +52,14 @@ type UpdateEntry = {
 };
 
 const UPDATES: UpdateEntry[] = [
+  {
+    date: "November 11-13, 2026",
+    title: "Three patches in two days: daily-update cadence confirmed — and zero new codes",
+    evidence: "api",
+    body: "The official Roblox API logged update timestamps of Nov 11 22:45 UTC, Nov 13 00:54 UTC and Nov 13 05:06 UTC — three patches inside two days, cementing the shift to a near-daily update rhythm (Nov 8, Nov 10, Nov 11, twice on Nov 13). None of the three shipped a new code: the official description stayed unchanged (no code signals), and trackers that updated inside the window (Destructoid on Nov 11, ProGamePilot on Nov 12) still list exactly four codes. This is the first update streak since the code system launched that produced no code — the developer appears to be shipping content/balance patches without the bonus drops for now. No official patch notes exist for any of the three, consistent with the game's pattern.",
+    wikiImpact:
+      "This log gained the entry you are reading. Codes list re-verified November 13 — no change. Words catalog: script-hub tooling updated for the latest patch now advertises a 520+ entry Word Diary, well above the Collector badge's official 150-word floor — single-source community signal, flagged here until corroborated; the words page floor stays at 150 for now.",
+  },
   {
     date: "November 10, 2026",
     title: "New-maps teaser ships codes three and four: NEWMAPSCOMING + BIG5",
@@ -113,7 +121,7 @@ export default function UpdatesPage() {
     <div>
       <PageHero
         title="Survive Your Ideas Update Log"
-        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · this game updates fast, and so does this page`}
+        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 13, 2026`}
         image="/images/official/shot-81392951073628.png"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Update Log" }]}
       />
