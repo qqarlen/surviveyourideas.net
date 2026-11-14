@@ -8,14 +8,14 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Update Log — Every Tracked Change (November 2026)",
   description:
-    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all four codes (NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), the November 11-13 triple-patch streak with no new codes, plus what each change means for this wiki's data.",
+    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all six codes (1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), the near-daily patch rhythm, plus what each change means for this wiki's data.",
   alternates: { canonical: "/updates" },
 };
 
 const faqs = [
   {
     q: "How often does Survive Your Ideas update?",
-    a: "Very fast for a new game — and accelerating. The official Roblox API 'updated' field logged patches on November 8, 10, 11, and twice on November 13 (00:54 and 05:06 UTC) — three patches inside the November 11-13 window alone. The first month already included the launch, a major early-November content wave, the code system rollout, and the code drops that followed each of the early patches. One nuance from the latest streak: updates no longer guarantee codes — the November 11-13 triple patch shipped none.",
+    a: "Very fast for a new game — and accelerating. The official Roblox API 'updated' field logged patches on November 8, 10, 11, and twice on November 13 (00:54 and 05:06 UTC) — three patches inside the November 11-13 window alone. The first month already included the launch, a major early-November content wave, the code system rollout, and the code drops that followed each of the early patches. One nuance from the latest streak: patch timestamps do not always line up with code drops — the November 11 patches shipped none, but the November 13 wave brought 1MMEMBERS and SATURDAYISTHEDAY.",
   },
   {
     q: "What did the early-November update add?",
@@ -53,12 +53,20 @@ type UpdateEntry = {
 
 const UPDATES: UpdateEntry[] = [
   {
-    date: "November 11-13, 2026",
-    title: "Three patches in two days: daily-update cadence confirmed — and zero new codes",
-    evidence: "api",
-    body: "The official Roblox API logged update timestamps of Nov 11 22:45 UTC, Nov 13 00:54 UTC and Nov 13 05:06 UTC — three patches inside two days, cementing the shift to a near-daily update rhythm (Nov 8, Nov 10, Nov 11, twice on Nov 13). None of the three shipped a new code: the official description stayed unchanged (no code signals), and trackers that updated inside the window (Destructoid on Nov 11, ProGamePilot on Nov 12) still list exactly four codes. This is the first update streak since the code system launched that produced no code — the developer appears to be shipping content/balance patches without the bonus drops for now. No official patch notes exist for any of the three, consistent with the game's pattern.",
+    date: "November 13, 2026",
+    title: "Fourth code wave: 1MMEMBERS + SATURDAYISTHEDAY celebrate community milestones",
+    evidence: "official",
+    body: "Two fresh codes went live on November 13: 1MMEMBERS grants 20 Spins to celebrate the game's Roblox group blowing past the one-million-member mark, and SATURDAYISTHEDAY adds 10 Lucky Spins to keep the weekend momentum going. Both were documented same-day by GamesRadar and Destructoid, with Beebom and IGN following within 24 hours. They arrived one day after the double patch (00:54 and 05:06 UTC), reinforcing the game's pattern of pairing content patches with celebration codes.",
     wikiImpact:
-      "This log gained the entry you are reading. Codes list re-verified November 13 — no change. Words catalog: script-hub tooling updated for the latest patch now advertises a 520+ entry Word Diary, well above the Collector badge's official 150-word floor — single-source community signal, flagged here until corroborated; the words page floor stays at 150 for now.",
+      "Codes page updated to six working codes with the highlight card, FAQ, fake-code warning and timeline rewritten to the new wave. Update log (this page) gained this entry. Full re-verification pass on codes sources — no other data changes.",
+  },
+  {
+    date: "November 11-13, 2026",
+    title: "Three patches in two days: daily-update cadence confirmed — then the code wave followed",
+    evidence: "api",
+    body: "The official Roblox API logged update timestamps of Nov 11 22:45 UTC, Nov 13 00:54 UTC and Nov 13 05:06 UTC — three patches inside two days, cementing the shift to a near-daily update rhythm (Nov 8, Nov 10, Nov 11, twice on Nov 13). The Nov 11-13 window itself shipped no codes — trackers updating inside it (Destructoid on Nov 11, ProGamePilot on Nov 12) still listed exactly four codes — but the celebration wave (1MMEMBERS + SATURDAYISTHEDAY) landed on November 13 right after the double patch. No official patch notes exist for any of the patches, consistent with the game's pattern.",
+    wikiImpact:
+      "This log gained the entry you are reading. Codes list re-verified November 15 — now six working codes (see the November 13 entry). Words catalog: script-hub tooling updated for the latest patch now advertises a 520+ entry Word Diary, well above the Collector badge's official 150-word floor — single-source community signal, flagged here until corroborated; the words page floor stays at 150 for now.",
   },
   {
     date: "November 10, 2026",
@@ -121,7 +129,7 @@ export default function UpdatesPage() {
     <div>
       <PageHero
         title="Survive Your Ideas Update Log"
-        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 13, 2026`}
+        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 15, 2026`}
         image="/images/official/shot-81392951073628.png"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Update Log" }]}
       />

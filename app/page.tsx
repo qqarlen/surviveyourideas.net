@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Are there any working Survive Your Ideas codes right now?",
-    a: "Yes. As of November 11, 2026 there are four active codes: NEWMAPSCOMING (30 Free Spins, dropped November 10 with the new-maps teaser), BIG5 (5 Lucky Spins, also November 10), FIRSTUPDATE (free rewards, from the November 8 update) and THANKYOU (5 Lucky Spins, live since around November 7, confirmed by Destructoid, Dexerto and ProGameGuides). You redeem them through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
+    a: "Yes. As of November 15, 2026 there are six active codes: 1MMEMBERS (20 Spins) and SATURDAYISTHEDAY (10 Lucky Spins), both dropped November 13 to celebrate community milestones; NEWMAPSCOMING (30 Free Spins, dropped November 10 with the new-maps teaser), BIG5 (5 Lucky Spins, also November 10), FIRSTUPDATE (free rewards, from the November 8 update) and THANKYOU (5 Lucky Spins, live since around November 7, confirmed by Destructoid, Dexerto and ProGameGuides). You redeem them through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
   },
   {
     q: "What is Survive Your Ideas on Roblox?",

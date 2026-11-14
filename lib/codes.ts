@@ -12,13 +12,25 @@ export type CodeEntry = {
 
 export const CODES_STATE = {
   hasRedemptionSystem: true,
-  lastVerified: "November 11, 2026",
+  lastVerified: "November 15, 2026",
   working: [
+    {
+      code: "SATURDAYISTHEDAY",
+      reward: "10 Lucky Spins",
+      added: "November 13, 2026",
+      source: "GamesRadar, Destructoid, Beebom (3-source cross-check, Nov 13) — weekend drop",
+    },
+    {
+      code: "1MMEMBERS",
+      reward: "20 Spins",
+      added: "November 13, 2026",
+      source: "GamesRadar, Destructoid, Beebom (3-source cross-check, Nov 13) — Roblox group milestone (1M members celebration)",
+    },
     {
       code: "BIG5",
       reward: "5 Lucky Spins",
       added: "November 10, 2026",
-      source: "GamesRadar (Nov 10) — newest drop",
+      source: "GamesRadar (Nov 10) — shipped with the new-maps teaser update",
     },
     {
       code: "NEWMAPSCOMING",
