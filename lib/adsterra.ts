@@ -10,6 +10,11 @@ export const ADSTERRA_SOCIAL_BAR = {
   scriptUrl: "https://bauval.org/14/450c0b31e3a257f848e9efd127dba11a",
 };
 
+// Popunder (site-wide script, opens on first click; placement Popunder_1 id 32156898)
+export const ADSTERRA_POPUNDER = {
+  scriptUrl: "https://abscloud.org/1/e69fb7147449683e0e7c9eedd69ebb68",
+};
+
 // Native Banner (desktop >= md / 768px, below header; network injects into #container-<key>)
 export const ADSTERRA_NATIVE_BANNER = {
   key: "19c780996c1aaa95e90f4fea167940a3",

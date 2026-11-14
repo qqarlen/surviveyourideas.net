@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { AdsterraNativeBanner } from "@/components/AdsterraNativeBanner";
 import { AdsterraSocialBar } from "@/components/AdsterraSocialBar";
 import { AdsterraBannerMobile } from "@/components/AdsterraBannerMobile";
+import { AdsterraPopunder } from "@/components/AdsterraPopunder";
 import { ADSTERRA_ENABLED } from "@/lib/adsterra";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
         <Footer />
         {ADSTERRA_ENABLED && <AdsterraSocialBar />}
+        {ADSTERRA_ENABLED && <AdsterraPopunder />}
       </body>
     </html>
   );
