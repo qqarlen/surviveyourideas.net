@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SITE, TOOL_PAGES } from "@/lib/site";
 import FaqSection from "@/components/FaqSection";
+import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 import { CODES_STATE } from "@/lib/codes";
 import { WORDS } from "@/lib/words";
 import { CASH_META_WORDS, ROBUX_META_WORDS, CASH_META_TOTAL } from "@/lib/meta-words";
@@ -128,6 +129,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <AdsterraBannerContent />
 
       {/* TOOLS */}
       <section className="mt-10">
@@ -307,6 +310,8 @@ export default function Home() {
           <Link href="/updates" className="text-brand-700 font-bold hover:underline">updates page</Link>.
         </p>
       </section>
+
+      <AdsterraBannerContent />
 
       <FaqSection faqs={faqs} />
     </div>
