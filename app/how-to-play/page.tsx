@@ -50,7 +50,7 @@ export default function HowToPlayPage() {
       <PageHero
         title="How to Play Survive Your Ideas"
         subtitle="The complete beginner guide · round structure · your first-match plan · everything sourced"
-        image="/images/official/shot-125644641492243.png"
+        image="/images/official/shot-125644641492243.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "How to Play" }]}
       />
       <AdsterraBannerContent />

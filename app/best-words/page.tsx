@@ -131,7 +131,7 @@ export default function BestWordsPage() {
       <PageHero
         title="Best Words to Type in Survive Your Ideas"
         subtitle={`${RANKING.length} confirmed words ranked by situation · S-tier picks flagged · timing matters more than raw power`}
-        image="/images/official/shot-125644641492243.png"
+        image="/images/official/shot-125644641492243.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Best Words" }]}
       />
       <AdsterraBannerContent />

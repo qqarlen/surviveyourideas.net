@@ -67,7 +67,7 @@ export default function Home() {
         <div className="absolute inset-0" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/official/shot-106796956241875.png"
+            src="/images/official/shot-106796956241875.webp"
             alt=""
             className="absolute inset-0 w-full h-full object-cover opacity-40"
           />

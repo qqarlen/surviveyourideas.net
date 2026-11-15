@@ -130,7 +130,7 @@ export default function UpdatesPage() {
       <PageHero
         title="Survive Your Ideas Update Log"
         subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 15, 2026`}
-        image="/images/official/shot-81392951073628.png"
+        image="/images/official/shot-81392951073628.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Update Log" }]}
       />
       <AdsterraBannerContent />

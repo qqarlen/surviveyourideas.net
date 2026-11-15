@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: SITE.name,
     type: "website",
     locale: SITE.locale,
-    images: [{ url: "/images/official/icon-512.png", width: 512, height: 512 }],
+    images: [{ url: "/images/official/icon-512.webp", width: 512, height: 512 }],
   },
 };
 
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link
           rel="icon"
           type="image/png"
-          href="/images/official/icon-512.png"
+          href="/images/official/icon-512.webp"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

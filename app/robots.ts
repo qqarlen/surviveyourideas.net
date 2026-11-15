@@ -7,19 +7,38 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: "*",
+        // GEO/AEO 核心爬虫：放行
+        userAgent: [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-Web",
+          "Claude-User",
+          "Claude-SearchBot",
+          "PerplexityBot",
+          "Perplexity-User",
+          "Google-Extended",
+          "Applebot-Extended",
+          "GeminiBot",
+          "cc-bots",
+        ],
         allow: "/",
       },
-      // AI crawlers explicitly allowed (GEO/AEO traffic)
-      { userAgent: "GPTBot", allow: "/" },
-      { userAgent: "OAI-SearchBot", allow: "/" },
-      { userAgent: "ChatGPT-User", allow: "/" },
-      { userAgent: "ClaudeBot", allow: "/" },
-      { userAgent: "Claude-Web", allow: "/" },
-      { userAgent: "PerplexityBot", allow: "/" },
-      { userAgent: "Google-Extended", allow: "/" },
-      { userAgent: "Applebot-Extended", allow: "/" },
-      { userAgent: "cc-bots", allow: "/" },
+      {
+        // 资源大户 + 低转化爬虫：拒绝（2026-11-15 Vercel 配额防御）
+        userAgent: [
+          "Bytespider",
+          "SEMrushBot",
+          "AhrefsBot",
+          "MJ12bot",
+          "DotBot",
+          "PetalBot",
+          "Baiduspider",
+          "YandexBot",
+        ],
+        disallow: "/",
+      },
     ],
     sitemap: `${SITE.url}/sitemap.xml`,
   };

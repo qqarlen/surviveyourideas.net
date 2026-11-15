@@ -49,7 +49,7 @@ export default function ItemsPage() {
       <PageHero
         title="Survive Your Ideas Items & Spins"
         subtitle={`${RARITIES.length} rarity tiers · 5 loadout slots · $${SPIN_ECONOMY.regularSpinCost.toLocaleString()} regular spins vs Lucky Spins from codes`}
-        image="/images/official/shot-128957347570067.png"
+        image="/images/official/shot-128957347570067.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Items & Spins" }]}
       />
       <AdsterraBannerContent />

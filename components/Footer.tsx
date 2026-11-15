@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/images/official/icon-512.png"
+              src="/images/official/icon-512.webp"
               alt="Survive Your Ideas"
               className="w-9 h-9 rounded-lg border border-blue-300"
             />

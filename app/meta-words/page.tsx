@@ -54,7 +54,7 @@ export default function MetaWordsPage() {
       <PageHero
         title="Survive Your Ideas Meta Words"
         subtitle={`${CASH_META_WORDS.length} Cash words totaling ${CASH_META_TOTAL.toLocaleString()} · ${ROBUX_META_WORDS.length} Robux words + bundle · prices verified on two sources`}
-        image="/images/official/shot-81392951073628.png"
+        image="/images/official/shot-81392951073628.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Meta Words" }]}
       />
       <AdsterraBannerContent />

@@ -49,7 +49,7 @@ export default function TipsPage() {
       <PageHero
         title="Survive Your Ideas Tips & Winning Strategy"
         subtitle={`${WORDS.length} documented hazards · word-reading discipline · endgame resource play · economy tips that fund the meta`}
-        image="/images/official/shot-107168990409225.png"
+        image="/images/official/shot-107168990409225.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Tips" }]}
       />
       <AdsterraBannerContent />

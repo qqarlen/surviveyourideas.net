@@ -49,7 +49,7 @@ export default function WordsPage() {
       <PageHero
         title="Survive Your Ideas Words List"
         subtitle={`${WORDS.length} confirmed words with evidence · persistent hazards flagged · no guessed catalog`}
-        image="/images/official/shot-128957347570067.png"
+        image="/images/official/shot-128957347570067.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Words" }]}
       />
       <AdsterraBannerContent />

@@ -6,6 +6,9 @@ import FaqSection from "@/components/FaqSection";
 import { WORDS, WORD_CATEGORIES } from "@/lib/words";
 import { SITE } from "@/lib/site";
 
+// Build-time-only content: unknown slugs 404 at CDN edge, no on-demand render
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return WORDS.map((w) => ({ slug: w.slug }));
 }
@@ -83,7 +86,7 @@ export default async function WordDetailPage({
       <PageHero
         title={`${word.word} — Survive Your Ideas Word Guide`}
         subtitle={`${word.category} family · ${word.persistent ? "persists ALL match ♾️" : "resolves after acting"} · evidence: ${word.evidence}`}
-        image="/images/official/shot-107168990409225.png"
+        image="/images/official/shot-107168990409225.webp"
         breadcrumb={[
           { href: "/", label: "Home" },
           { href: "/words", label: "Words" },

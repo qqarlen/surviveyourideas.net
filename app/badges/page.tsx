@@ -58,7 +58,7 @@ export default function BadgesPage() {
       <PageHero
         title="Survive Your Ideas Badges"
         subtitle={`${BADGES.length} official badges · requirements from Roblox's badges API · tips for the skill checks`}
-        image="/images/official/shot-81392951073628.png"
+        image="/images/official/shot-81392951073628.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Badges" }]}
       />
       <AdsterraBannerContent />

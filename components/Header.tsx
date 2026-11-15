@@ -17,7 +17,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/official/icon-512.png"
+            src="/images/official/icon-512.webp"
             alt="Survive Your Ideas logo"
             className="w-10 h-10 rounded-xl border-2 border-blue-300 shadow"
           />

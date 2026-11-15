@@ -22,7 +22,7 @@ export function Breadcrumb({ items }: { items: { href?: string; label: string }[
 export default function PageHero({
   title,
   subtitle,
-  image = "/images/official/shot-106796956241875.png",
+  image = "/images/official/shot-106796956241875.webp",
   breadcrumb,
 }: {
   title: string;
