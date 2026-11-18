@@ -12,8 +12,14 @@ export type CodeEntry = {
 
 export const CODES_STATE = {
   hasRedemptionSystem: true,
-  lastVerified: "November 15, 2026",
+  lastVerified: "November 18, 2026",
   working: [
+    {
+      code: "100KCCU",
+      reward: "5 Lucky Spins",
+      added: "November 14, 2026",
+      source: "Destructoid, Bloxodes, SuperCheats (3-source cross-check, Nov 14/15) — 100K concurrent players milestone. Beebom lists 20 Spins; majority reward text (5 Lucky Spins) wins. MrGuider adds it needs a fresh server.",
+    },
     {
       code: "SATURDAYISTHEDAY",
       reward: "10 Lucky Spins",

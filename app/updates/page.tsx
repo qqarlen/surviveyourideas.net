@@ -8,7 +8,7 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Update Log — Every Tracked Change (November 2026)",
   description:
-    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all six codes (1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), the near-daily patch rhythm, plus what each change means for this wiki's data.",
+    "Survive Your Ideas update history from the official Roblox API: launch (Oct 6), the early-November content wave with 40+ new words and Word Mastery (community-tracked), the code system arrival and all seven codes (100KCCU, 1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE, THANKYOU), the near-daily patch rhythm, plus what each change means for this wiki's data.",
   alternates: { canonical: "/updates" },
 };
 
@@ -52,6 +52,14 @@ type UpdateEntry = {
 };
 
 const UPDATES: UpdateEntry[] = [
+  {
+    date: "November 14, 2026",
+    title: "Fifth code: 100KCCU fires at the 100K concurrent-players milestone",
+    evidence: "official",
+    body: "100KCCU grants 5 Lucky Spins and celebrates the game smashing through 100,000 concurrent players — its biggest CCU milestone yet (November 7's chart climb peaked around 40K chart-active; the official API now shows a 53K peak and a 121M+ visit count). Documented November 14-15 by Destructoid, Bloxodes and SuperCheats, with Beebom following. Reward-text note: Beebom lists 20 Spins while the other three list 5 Lucky Spins — majority text wins, and MrGuider adds the code may require a fresh server. The November 17 API patch (17:02 UTC) shipped no new code.",
+    wikiImpact:
+      "Codes page updated to seven working codes: highlight card, FAQ, fake-code warning and timeline rewritten. Home stat cards refreshed to the November 18 API snapshot (38.6K CCU, 121M+ visits, 89K favorites). Update log (this page) gained this entry.",
+  },
   {
     date: "November 13, 2026",
     title: "Fourth code wave: 1MMEMBERS + SATURDAYISTHEDAY celebrate community milestones",
@@ -129,7 +137,7 @@ export default function UpdatesPage() {
     <div>
       <PageHero
         title="Survive Your Ideas Update Log"
-        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 15, 2026`}
+        subtitle={`${UPDATES.length} tracked entries · evidence-tiered · last verified November 18, 2026`}
         image="/images/official/shot-81392951073628.webp"
         breadcrumb={[{ href: "/", label: "Home" }, { label: "Update Log" }]}
       />

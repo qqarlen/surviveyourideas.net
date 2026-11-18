@@ -17,11 +17,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Are there any working Survive Your Ideas codes right now?",
-    a: "Yes. As of November 15, 2026 there are six active codes: 1MMEMBERS (20 Spins) and SATURDAYISTHEDAY (10 Lucky Spins), both dropped November 13 to celebrate community milestones; NEWMAPSCOMING (30 Free Spins, dropped November 10 with the new-maps teaser), BIG5 (5 Lucky Spins, also November 10), FIRSTUPDATE (free rewards, from the November 8 update) and THANKYOU (5 Lucky Spins, live since around November 7, confirmed by Destructoid, Dexerto and ProGameGuides). You redeem them through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
+    a: "Yes. As of November 18, 2026 there are seven active codes: 100KCCU (5 Lucky Spins, dropped November 14 for the 100K concurrent-players milestone); 1MMEMBERS (20 Spins) and SATURDAYISTHEDAY (10 Lucky Spins), both dropped November 13 to celebrate community milestones; NEWMAPSCOMING (30 Free Spins, dropped November 10 with the new-maps teaser), BIG5 (5 Lucky Spins, also November 10), FIRSTUPDATE (free rewards, from the November 8 update) and THANKYOU (5 Lucky Spins, live since around November 7, confirmed by Destructoid, Dexerto and ProGameGuides). You redeem them through the Codes icon in the upper-left corner of the game. Our codes page is re-checked daily so new drops land there within a day.",
   },
   {
     q: "What is Survive Your Ideas on Roblox?",
-    a: "It is a free multiplayer survival game by the Survive Your Ideas group (developer SlayHatt), released October 6, 2026. Each round, one random player types any word — and that word comes to life in the arena. A TSUNAMI floods the map, a DINOSAUR starts chasing players, TACOS rains from the sky. Hazards stack on top of each other, and the last player alive wins. The game passed 50,000 concurrent players and hit #3 on third-party global charts within its first month.",
+    a: "It is a free multiplayer survival game by the Survive Your Ideas group (developer SlayHatt), released October 6, 2026. Each round, one random player types any word — and that word comes to life in the arena. A TSUNAMI floods the map, a DINOSAUR starts chasing players, TACOS rains from the sky. Hazards stack on top of each other, and the last player alive wins. The game passed 100,000 concurrent players in its first month and hit #2 on third-party global charts.",
   },
   {
     q: "What are the best words to type in Survive Your Ideas?",
@@ -166,8 +166,8 @@ export default function Home() {
           {
             href: "/codes",
             title: "Codes (Checked Daily)",
-            body: "NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU are all live right now — 30 Free Spins plus three Lucky/rewards drops. We watch the official group, the developer's channels and the big trackers daily, so the next drop lands here with its reward and date before the stale sites update.",
-            tag: "4 working codes",
+            body: "100KCCU, 1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU are all live right now — 70+ Spins across seven drops. We watch the official group, the developer's channels and the big trackers daily, so the next drop lands here with its reward and date before the stale sites update.",
+            tag: "7 working codes",
           },
           {
             href: "/words",

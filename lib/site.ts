@@ -19,12 +19,12 @@ export const SITE = {
   },
   lastDataCheck: "November 8, 2026",
   stats: {
-    ccu: "53,451",
-    visits: "19.5M+",
-    favorites: "50,519",
+    ccu: "38,642",
+    visits: "121M+",
+    favorites: "88,993",
     groupMembers: "162,617",
     maxPlayers: 40,
-    chartRank: "#3 global (BloxControl, Nov 7)",
+    chartRank: "#2 global (BloxControl, Nov 13)",
   },
 };
 
