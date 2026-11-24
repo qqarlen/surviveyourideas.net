@@ -11,14 +11,14 @@ import { AdsterraBannerContent } from "@/components/AdsterraBannerContent";
 export const metadata: Metadata = {
   title: "Survive Your Ideas Codes (November 2026) — 100KCCU, 1MMEMBERS, SATURDAYISTHEDAY + NEWMAPSCOMING, Checked Daily",
   description:
-    "Working Survive Your Ideas codes as of November 18, 2026: 100KCCU (5 Lucky Spins), 1MMEMBERS (20 Spins), SATURDAYISTHEDAY (10 Lucky Spins), NEWMAPSCOMING (30 Free Spins), BIG5 (5 Lucky Spins), FIRSTUPDATE (free rewards) and THANKYOU (5 Lucky Spins). Redemption steps, where new codes come from, and why some listed codes are fake — re-verified every day.",
+    "Working Survive Your Ideas codes as of November 24, 2026: 100KCCU (5 Lucky Spins), 1MMEMBERS (20 Spins), SATURDAYISTHEDAY (10 Lucky Spins), NEWMAPSCOMING (30 Free Spins), BIG5 (5 Lucky Spins) and FIRSTUPDATE (free rewards). THANKYOU expired mid-November. Redemption steps, where new codes come from, and why some listed codes are fake — re-verified every day.",
   alternates: { canonical: "/codes" },
 };
 
 const faqs = [
   {
     q: "What are the working Survive Your Ideas codes as of November 2026?",
-    a: "There are seven active codes as of November 18, 2026. 100KCCU (5 Lucky Spins) is the newest, dropped November 14 to celebrate the game hitting 100,000 concurrent players; 1MMEMBERS (20 Spins) and SATURDAYISTHEDAY (10 Lucky Spins) both landed November 13 to celebrate the game's community growth; NEWMAPSCOMING landed November 10 with the developer's new-maps teaser and grants 30 Free Spins; BIG5 (5 Lucky Spins) shipped the same day; FIRSTUPDATE arrived with the game's first update on November 8 with free rewards; and THANKYOU (5 Lucky Spins) went live around November 7 during the game's chart-topping week. All seven are confirmed by independent Roblox codes trackers, with the newest batch cross-checked by GamesRadar, Destructoid, Beebom and IGN.",
+    a: "Six codes are live as of November 24, 2026: 100KCCU (5 Lucky Spins) dropped November 14 to celebrate the game hitting 100,000 concurrent players; 1MMEMBERS (20 Spins) and SATURDAYISTHEDAY (10 Lucky Spins) both landed November 13 to celebrate the game's community growth; NEWMAPSCOMING landed November 10 with the developer's new-maps teaser and grants 30 Free Spins; BIG5 (5 Lucky Spins) shipped the same day; and FIRSTUPDATE arrived with the game's first update on November 8 — though three major outlets now list it expired, so redeem it soon. THANKYOU, the game's first-ever code, expired around November 14. The active list is cross-checked by GamesRadar, Destructoid, Beebom, IGN and Roblox Den.",
   },
   {
     q: "How do I redeem codes in Survive Your Ideas?",
@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "What do Lucky Spins from codes actually give you?",
-    a: "Spins roll items for your five equipment slots, with rarities from Common to Mythical. Lucky Spins are the alternative roll type to regular spins, which cost $10,000 Cash each — so a single THANKYOU redemption is effectively $50,000 of rolls you did not have to grind for. Community guides recommend Lucky Spins as your primary upgrade path while banking Cash for Meta Words.",
+    a: "Spins roll items for your five equipment slots, with rarities from Common to Mythical. Lucky Spins are the alternative roll type to regular spins, which cost $10,000 Cash each — so the five Lucky Spins from 100KCCU are effectively $50,000 of rolls you did not have to grind for. Community guides recommend Lucky Spins as your primary upgrade path while banking Cash for Meta Words.",
   },
   {
     q: "Why do some sites list Survive Your Ideas codes that don't work?",
@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: "When do new Survive Your Ideas codes usually drop?",
-    a: "The game is one week into its code era, so no pattern is established yet. That said, THANKYOU appeared alongside a major chart milestone, which fits the common Roblox pattern: codes celebrate visit counts, updates or events. The game updates frequently (it was updated the same morning we last verified this page), and the developer communicates through the official group and Discord. We check all of them daily.",
+    a: "The game is three weeks into its code era and the pattern is already visible: seven codes shipped in the first two weeks, the first expiry (THANKYOU) hit at day seven, and no new code has dropped since 100KCCU on November 14 — a quiet stretch that fits the developer saving the next wave for the promised new maps. Codes celebrate milestones (100KCCU = 100K concurrent players, 1MMEMBERS = one-million-member group) and update moments (FIRSTUPDATE, NEWMAPSCOMING). The game updates frequently, and the developer communicates through the official group and Discord. We check all of them daily.",
   },
   {
     q: "Are there any expired Survive Your Ideas codes?",
-    a: "Not yet. 100KCCU, 1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU are the only codes the game has ever released and all seven are still active as of November 18, 2026. Once codes start expiring — and they will, because that is how Roblox code cycles work — each one moves to our expired list with its retirement date, so you always know whether a code you missed is gone forever or just old.",
+    a: "Yes — one. THANKYOU (5 Lucky Spins), the game's very first code from around November 7, expired around November 14 after roughly seven days, confirmed by Destructoid, IGN, GamesRadar, RadioTimes and GamestratWiki. FIRSTUPDATE (November 8) is on watch: IGN, RadioTimes and GamesRadar list it expired while Roblox Den still tracked it active on November 19, so we keep it in the working list with a warning — redeem it soon either way. Every retirement gets an expiry date here, so you always know whether a code you missed is gone forever or just contested.",
   },
   {
     q: "Do codes work on mobile and console?",
@@ -56,23 +56,25 @@ export default function CodesPage() {
       />
       <AdsterraBannerContent />
 
-      {/* Newest code highlight */}
+      {/* Status highlight */}
       <div className="mt-6 rounded-2xl border-2 border-emerald-400 bg-emerald-50 p-5">
         <div className="flex items-start gap-3">
           <span className="text-2xl">🎉</span>
           <div>
             <h2 className="font-extrabold text-lg text-slate-900">
-              New code: 100KCCU is live
+              Status check November 24: six codes live, THANKYOU expired
             </h2>
             <p className="text-slate-700 mt-1 leading-relaxed text-sm">
-              A <strong>fresh code</strong> landed on November 14, 2026:{" "}
-              <strong>100KCCU</strong> grants <strong>5 Lucky Spins</strong> to
-              celebrate the game crashing through <strong>100,000
-              concurrent players</strong>. It joins 1MMEMBERS,
-              SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU,
-              bringing the working list to <strong>seven codes</strong>.
-              Redeem all of them before the wave rotates; early codes are
-              rarely permanent.
+              The working list now stands at <strong>six codes</strong>:
+              100KCCU (the newest, from November 14), SATURDAYISTHEDAY,
+              1MMEMBERS, NEWMAPSCOMING, BIG5 and FIRSTUPDATE.{" "}
+              <strong>THANKYOU — the game&apos;s first-ever code — expired
+              around November 14</strong> after roughly a week, so if you
+              never redeemed it, that roll is gone. FIRSTUPDATE is on the
+              bubble (three outlets call it expired, Roblox Den still had it
+              tracked November 19): redeem it <strong>now</strong> if you
+              haven&apos;t. No new codes have dropped since 100KCCU — the
+              promised new maps are the likely next drop window.
             </p>
           </div>
         </div>
@@ -106,13 +108,25 @@ export default function CodesPage() {
         <h2 className="text-2xl font-extrabold border-b-2 border-blue-200 pb-2 mb-4">
           Expired Codes
         </h2>
-        <div className="rounded-xl border border-slate-200 bg-white p-5 text-slate-600">
-          None yet — all seven shipped codes (100KCCU, 1MMEMBERS,
-          SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5, FIRSTUPDATE and THANKYOU) are still active as of {CODES_STATE.lastVerified}. When
-          they rotate out (or new codes replace them), each retired code lands
-          here with its expiry date instead of silently vanishing from the
-          list.
+        <div className="space-y-3">
+          {CODES_STATE.expired.map((c, i) => (
+            <div key={i} className="rounded-xl border border-slate-300 bg-slate-100 p-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <CodePill code={c.code} />
+                <span className="font-bold text-slate-600 line-through">{c.reward}</span>
+                <span className="text-xs text-slate-500">
+                  added {c.added} · expired {c.expired}
+                </span>
+              </div>
+              <p className="mt-2 text-xs text-slate-500 leading-relaxed">⚠️ {c.source}</p>
+            </div>
+          ))}
         </div>
+        <p className="mt-3 text-sm text-slate-500">
+          FIRSTUPDATE sits on the bubble: three outlets list it expired, Roblox
+          Den still had it tracked November 19 — it stays in the working list
+          above with a warning until the picture settles.
+        </p>
       </section>
 
       {/* How to redeem */}
@@ -183,17 +197,21 @@ export default function CodesPage() {
         <h2>Fake Code Warning</h2>
         <p>
           With the game trending this hard, low-quality sites are already
-          stuffing "Survive Your Ideas codes" pages with invented strings.
+          stuffing &quot;Survive Your Ideas codes&quot; pages with invented strings.
           The tells are the same as every trending Roblox game: rewards in
           suspiciously round numbers (100K Cash, 2x Victory), codes named
           WELCOME / RELEASE / SPINFREE — none of which have ever existed
           here — and lists copied from other typing-survival games. As of{" "}
           {CODES_STATE.lastVerified}, exactly seven codes have ever shipped
           (100KCCU, 1MMEMBERS, SATURDAYISTHEDAY, NEWMAPSCOMING, BIG5,
-          FIRSTUPDATE and THANKYOU). Any page listing
-          ten or twelve "active" codes right now is listing fiction. We would
-          rather run an honest seven-line list than a wall of garbage, and this
-          page becomes the fastest accurate list every time a new wave drops.
+          FIRSTUPDATE and THANKYOU — the last now expired). Beware single-source
+          &quot;new&quot; codes too: a &quot;100KLIKES&quot; code circulating on one
+          low-quality tracker has never been confirmed by any major outlet and
+          follows a naming pattern this game&apos;s developer has never used
+          (celebration codes here honor CCU and member milestones, not like
+          counts). We would rather run an honest verified list than a wall of
+          garbage, and this page becomes the fastest accurate list every time
+          a new wave drops.
         </p>
 
         <h2>Codes History Timeline</h2>
@@ -217,12 +235,18 @@ export default function CodesPage() {
           momentum going. The fifth arrived November 14: <strong>100KCCU</strong>{" "}
           (5 Lucky Spins) fired when the game smashed through 100,000
           concurrent players — a CCU milestone celebration, the classic
-          Roblox pattern. That pacing —
-          seven codes in under two weeks — tells you the developer is actively using
-          codes to fuel the game's growth phase. When the next milestone hits
-          (the new maps themselves, visit counts, a seasonal event), expect a
-          fresh wave, and this page will have each code with its reward,
-          source and dates within a day.
+          Roblox pattern. And the era&apos;s first expiry followed:
+          THANKYOU, the code that started it all, died around{" "}
+          <strong>November 14</strong> after roughly seven days — the
+          retirement signal every Roblox code watcher expects at this stage.
+          FIRSTUPDATE (November 8) is now on the same bubble: three outlets
+          list it expired while Roblox Den still tracked it November 19, so
+          we keep it listed with a warning. That pacing — seven codes in
+          under two weeks, first expiry at day seven — tells you the
+          developer is actively cycling codes to fuel the game&apos;s
+          growth phase, and the promised new maps are the likely next drop
+          window. When that hits, expect a fresh wave, and this page will
+          have each code with its reward, source and dates within a day.
         </p>
       </section>
 
