@@ -9,6 +9,10 @@ import { ADSTERRA_ENABLED } from "@/lib/adsterra";
 import { SITE } from "@/lib/site";
 import "./globals.css";
 
+// ISR 窗口 7 天：降低 Vercel ISR Reads 消耗（默认 5 分钟窗口每天穿透 288 次/URL，Hobby 1M/月配额吃紧）。
+// 内容更新走 git push 部署，部署会自动清空 ISR 缓存，不影响 codes 日更的新鲜度。
+export const revalidate = 604800;
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
